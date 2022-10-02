@@ -1,81 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<fcntl.h>
-#include<sys/types.h>
-#include<unistd.h>
-#include<sys/stat.h>
-#include<string.h>
-#include<errno.h>
-// #include"diskinfo.h"
+#include"vdallocate.h"
 
-#include"diskdriver.c"
-#include"bitio.c"
+unsigned int free_disk_space = 0;
 
-disk_info disk_meta;
-file_info file_meta;
-char buf[BLOCK_SIZE];
-int total_arr_size,no_of_blks;
-int total_blocks_req_bits;
-int free_disk_space = 0;
-int bno,mno;
-
-
-
-void dis_file_meta()
-{
-    int i,j,k;
-    int free_meta_found = 0;
-    int first_block_meta = total_blocks_req_bits + 1;
-    int last_block_meta = first_block_meta + (disk_meta.total_files / 4);
-    
-    for(i=first_block_meta;i<=last_block_meta;i++)
-    {
-        read_block(buf,i);
-        for(j =0;j<4;j++)
-        {
-            memcpy(&file_meta, (buf+(j*sizeof(file_info))), sizeof(file_info));
-            if(file_meta.is_free == 0x01)
-            {
-                printf("-------------------------------\n");
-                printf("is free = %x\n",file_meta.is_free);
-                printf("filename = %s\n",file_meta.file_name);
-                printf("file size = %d\n",file_meta.file_size);
-                printf("ptr to blk = %d\n",file_meta.ptr_to_blk); 
-                printf("\n");  
-            }
-        }
-    }
-}
-
-void write_bitmap_disk(char *bitmap)
-{
-    int i,j,k;
-    i = 0;
-    k = 0;
-    while(i< total_blocks_req_bits)
-    {
-        j =0;
-        while(j < disk_meta.blk_size)
-        {
-            buf[j] = bitmap[k];
-            j++;
-            k++;
-        }
-        write_block(buf,(i+1));
-        i++;
-    }
-}
-
-void displaybitmap(char *bitmap)
-{
-    int i,j,k;
-    for(i=0;i<total_arr_size;i++)
-    {
-        printf(" %d - bitmap value = %x\n",i,bitmap[i]);
-    }
-
-}
 
 char *disk_init()
 {
@@ -98,7 +24,7 @@ char *disk_init()
 
     no_of_blks = disk_meta . disk_size / disk_meta . blk_size;
     total_blocks_req_bits = (no_of_blks / 8)/disk_meta . blk_size;
-    //printf("total blocks required for bits= %d\n",total_blocks_req_bits);
+    printf("total blocks required for bits= %d\n",total_blocks_req_bits);
 
     total_arr_size = total_blocks_req_bits * disk_meta . blk_size;
     unsigned char *bitmap;
@@ -119,36 +45,6 @@ char *disk_init()
         j++;
     }
     return bitmap;
-}
-
-int find_empty_block(char *bitmap)
-{
-    int i,j=0,k=0,num=0;
-    for(i= 0;i<total_arr_size;i++)
-    {
-        if(bitmap[i] == 0)
-        {
-            continue;
-        }
-        else
-        {
-            j =i;
-            break;
-        }
-    }
-    char bit = bitmap[j];
-    k = 0;
-    for(i=0;i<8;i++)
-    {
-        k = (bit<<i) & (0x80);
-        if(k==128)
-        {
-            num = i + 1;
-            break;
-        }
-    }
-    num = (j*8)+num;
-    return num;
 }
 
 int get_free_disk_size(char *bitmap)
@@ -178,38 +74,6 @@ int get_free_disk_size(char *bitmap)
     return free_disk_space;
 }
 
-int get_empty_node(char *fname)
-{
-    int i,j,k;
-    int free_meta_found = 0;
-    int first_block_meta = total_blocks_req_bits + 1;
-    int last_block_meta = first_block_meta + (disk_meta.total_files / 4);
-    
-    for(i=first_block_meta;i<=last_block_meta;i++)
-    {
-        read_block(buf,i);
-        for(j =0;j<4;j++)
-        {
-            memcpy(&file_meta, (buf+(j*sizeof(file_info))), sizeof(file_info));
-            // if((strcmp(file_meta.file_name,fname) == 0) && (file_meta.is_free = 0x01))
-            // {
-            //         printf("Same name file already exists\n");
-            //         return 2;
-            // }
-            if(file_meta.is_free == 0x00)
-            {
-                free_meta_found = 1;
-                bno = i;
-                mno = j;
-                return 1;
-            }
-        }
-    }
-    if(free_meta_found == 0)
-        return 0;
-}
-
-
 int add_file(char *fname,char *bitmap)
 {
     int file_fd,i,j,k;
@@ -221,7 +85,8 @@ int add_file(char *fname,char *bitmap)
     }
     
     int file_size = lseek(file_fd,0,SEEK_END);
-    if(file_size < 0)
+    lseek(file_fd,0,SEEK_SET);
+    if(file_size <= 0)
     {
         printf("Unable to seek file ");
         return 0;
@@ -251,6 +116,8 @@ int add_file(char *fname,char *bitmap)
         return 0;
     }
 
+    //writing file meta to disk
+
     file_meta.is_free = 0x01;
     strcpy(file_meta.file_name,fname);
     file_meta.file_size = file_size;
@@ -258,37 +125,74 @@ int add_file(char *fname,char *bitmap)
     clear_bit(bitmap,file_meta.ptr_to_blk);
 
     read_block(buf,bno);
-    memcpy((buf+(mno*sizeof(file_info))), &file_meta,sizeof(file_info));
+    memcpy((buf+(mno*sizeof(file_info))), &file_meta, sizeof(file_info));
     write_block(buf,bno);
+    memset(buf,0,disk_meta.blk_size);
+    // -----------------------------------------
 
-    int blk_nos[255]={0};
+    // writing data to disk
+    int arrsize = disk_meta . blk_size / sizeof(unsigned int);
+    unsigned int *blk_nos;
+    blk_nos = (unsigned int *)malloc(arrsize*sizeof(unsigned int));
     int count = 0;
+    int prev_no = file_meta.ptr_to_blk;
     j =0;
     while(count < file_size)
     {
-        memset(buf,0,disk_meta.blk_size);
+        if(j == (arrsize - 1))
+        {
+            blk_nos[j] = find_empty_block(bitmap);
+            clear_bit(bitmap,blk_nos[j]);
+            memcpy(buf,blk_nos,disk_meta.blk_size);
+            
+            write_block(buf , prev_no);
+            prev_no = blk_nos[j];
+
+        
+            for( k =0; k < arrsize ; k++)
+            {
+                blk_nos[k] = 0;
+            }
+            j = 0;
+            continue;
+        }
+
+        memset(buf,0,disk_meta .blk_size);
         i = find_empty_block(bitmap);
         clear_bit(bitmap,i);
-        blk_nos[j] = i;
-        j++;
+        
+        
         k = read(file_fd,buf,disk_meta.blk_size);    
         if(k < 0)
         {
             perror("Unable to read block ");
-            return 0;
+            exit(EXIT_FAILURE);
         }
-        write_block(buf,i);
+        
+        k = write_block(buf,i);
+        if(k < disk_meta . blk_size)
+        {
+            printf("error\n");
+            exit(EXIT_FAILURE);
+        }
+
+        blk_nos[j] = i;
+        j++;
 
         count = count + disk_meta.blk_size;
     }
     
-    memcpy(buf,blk_nos,disk_meta.blk_size);
-    write_block(buf,file_meta.ptr_to_blk);
-    for(i=0;i<255;i++)
+    if(j < (arrsize -1))
     {
-        if(blk_nos[i] > 0)
-        printf("blk no = %d\n",blk_nos[i]);
+        memcpy(buf,blk_nos,disk_meta.blk_size);
+        k = write_block(buf,prev_no);
+        if(k < disk_meta . blk_size)
+        {
+            printf("error\n");
+            exit(EXIT_FAILURE);
+        }
     }
+    
     free_disk_space = free_disk_space - file_size;
     close(file_fd);
     return 1;
@@ -296,97 +200,167 @@ int add_file(char *fname,char *bitmap)
 }
 
 
-int get_file_node(char *fname)
-{
-    int i,j,k;
-    int free_meta_found = 0;
-    int first_block_meta = total_blocks_req_bits + 1;
-    int last_block_meta = first_block_meta + (disk_meta.total_files / 4);
-    
-    for(i=first_block_meta;i<=last_block_meta;i++)
-    {
-        read_block(buf,i);
-        for(j =0;j<4;j++)
-        {
-            memcpy(&file_meta, (buf+(j*sizeof(file_info))), sizeof(file_info));
-            if(file_meta.is_free == 0x01)
-            {
-                if(strcmp(file_meta.file_name,fname)==0)
-                {
-                    bno = i;
-                    mno =j;
-                    return 1;
-                } 
-            }
-        }
-    }
-    return 0;
-}
-
 void read_file(char *fname)
 {
     int i,j,k;
-    i = get_file_node(fname);
-    printf("---------------     ------------\n");
-    printf("is free = %x\n",file_meta.is_free);
-    printf("filename = %s\n",file_meta.file_name);
-    printf("file size = %d\n",file_meta.file_size);
-    printf("ptr to blk = %d\n",file_meta.ptr_to_blk); 
-    printf("\n"); 
+    i = get_file_node(fname); 
     if(i == 0)
     {
         printf("file not found\n");
         return;
     }
-
+    display_meta(file_meta);
     int file_fd;
-    file_fd = open("outfromdisk.txt",O_CREAT |O_WRONLY,0666);
+    file_fd = open("outfromdisk.txt",O_CREAT |O_WRONLY|O_TRUNC,0666);
     if(file_fd == -1)
     {
         printf("Unable to create file to write\n");
         return;
     }
     k = file_meta.ptr_to_blk;
-    read_block(buf,k);
     
-    int blk_nos[255];
+    
+    int count = file_meta.file_size;
+    int arrsize = disk_meta . blk_size / sizeof(unsigned int);
+    unsigned int *blk_nos;
+    blk_nos = (unsigned int *)malloc(arrsize*sizeof(unsigned int));
+
+    read_block(buf,k);
     memcpy(blk_nos,buf,disk_meta.blk_size);
+    memset(buf,0,disk_meta.blk_size);
 
-    for(i=0;i<255;i++)
+    while(count > 0)
     {
-        if(blk_nos[i] > 0)
+        for(i =0 ; i< (arrsize - 1) ;i++)
         {
-            printf("blk no = %d\n",blk_nos[i]);
+            if(blk_nos[i] > 0)
+            {
+                read_block(buf,blk_nos[i]);
+                if(count < disk_meta.blk_size)
+                {
+                    write(file_fd,buf,count);
+                    count = 0;
+                    break;
+                }
+                write(file_fd,buf,disk_meta.blk_size);
+                count = count - disk_meta.blk_size;
+            }
         }
-    }
-
-    for(i=0;i<254;i++)
-    {
-        if(i > 0)
+        if(count == 0)
         {
-            read_block(buf,blk_nos[i]);
-            write(file_fd,buf,1024);
+            break;
         }
+        k = arrsize -1;
+        if(blk_nos[k] > 0)
+        {
+            memset(buf, 0, disk_meta.blk_size);
+            read_block(buf,blk_nos[k]);
+            memcpy(blk_nos, buf, disk_meta.blk_size);
+        }
+        
     }
 
     close(file_fd);
 }
 
+int delete_file(char *fname,char *bitmap)
+{
+    int i,j,k;
+    
+    i = get_file_node(fname); 
+    if(i == 0)
+    {
+        printf("file not found\n");
+        return 0;
+    }
+    
+    
+    k = file_meta.ptr_to_blk;
+    int count = file_meta.file_size;
+    int arrsize = disk_meta . blk_size / sizeof(unsigned int);
+    unsigned int *blk_nos;
+    blk_nos = (unsigned int *)malloc(arrsize*sizeof(unsigned int));
 
-int main()
+    read_block(buf,k);
+    set_bit(bitmap,k);
+    memcpy(blk_nos,buf,disk_meta.blk_size);
+    memset(buf,0,disk_meta.blk_size);
+
+    while(count > 0)
+    {
+        for(i =0 ; i< (arrsize - 1) ;i++)
+        {
+            if(blk_nos[i] > 0)
+            {
+                set_bit(bitmap,blk_nos[i]);
+                if(count < disk_meta.blk_size)
+                {
+                    count = 0;
+                    break;
+                }
+                count = count - disk_meta.blk_size;
+            }
+        }
+        if(count == 0)
+        {
+            break;
+        }
+        k = arrsize -1;
+        if(blk_nos[k] > 0)
+        {
+            memset(buf, 0, disk_meta.blk_size);
+            read_block(buf,blk_nos[k]);
+            set_bit(bitmap,blk_nos[k]);
+            memcpy(blk_nos, buf, disk_meta.blk_size);
+        }
+        
+    }
+    file_meta.is_free = 0x00;
+
+    read_block(buf,bno);
+    memcpy((buf+(mno*sizeof(file_info))), &file_meta, sizeof(file_info));
+    write_block(buf,bno);
+    free_disk_space = free_disk_space + file_meta.file_size;
+    return 1;
+
+}
+
+
+int main(int argc,char **argv)
 {
     int i,j,k;
     char *bitmap;
     bitmap = disk_init();
-    //displaybitmap(bitmap);
-    // i = find_empty_block(bitmap);
-    // printf("block found = %d\n",i);
-    char *fname = "sample_test.txt";
+    
+    char *fname;
+    fname = (char *)malloc(200*sizeof(char));
+    fname = argv[1];
+    
     i = add_file(fname,bitmap);
-    printf("value of i = %d\n",i);
-    //read_file(fname);
-    write_bitmap_disk(bitmap);
+    if(i == 1)
+    {
+        printf("file added succesfully\n");
+    }
+    else
+    {
+        printf("Unable to add file \n");
+    }
+    
+    
+    read_file(fname);
+    delete_file(fname,bitmap);
+    
 
-    dis_file_meta();
+    
+    
+
+    // printf("free size on disk = %d\n",get_free_disk_size(bitmap));
+    
+    // displaybitmap(bitmap);
+    // dis_file_meta();
+    // display_diskmeta();
+    
+    write_bitmap_disk(bitmap);
     close(disk_fd);
 }
+

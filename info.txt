@@ -1,0 +1,8 @@
+gcc vdcreate.c -o vdcreate && ./vdcreate mydisk 134217728 1024 16384
+
+for disk size 128MB = 134217728 bytes
+block size = 1024
+max files allowed = 128
+
+total no of blocks = 134217728 / 1024 = 131072
+total blocks req for bits = (131072 / 8) / 1024 = 16

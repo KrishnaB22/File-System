@@ -1,0 +1,18 @@
+CC = gcc
+FS_DIR = $(shell pwd)
+INCLUDE_DIR = $(FS_DIR)/include
+
+CFLAGS = -I$(INCLUDE_DIR)
+
+TARGET = diskop
+files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c 
+
+all:
+	$(CC) $(files) -o $(TARGET) $(CFLAGS)
+
+
+create:
+	gcc vdcreate.c -o vdcreate && ./vdcreate mydisk 134217728 1024 16384
+
+clean:
+	rm -rf *.o
