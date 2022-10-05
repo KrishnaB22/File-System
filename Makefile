@@ -15,4 +15,4 @@ create:
 	gcc vdcreate.c -o vdcreate && ./vdcreate mydisk 134217728 1024 16384
 
 clean:
-	rm -rf *.o $(TARGET)
+	rm -rf mydisk $(TARGET) out.txt vdcreate

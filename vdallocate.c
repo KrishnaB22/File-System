@@ -461,7 +461,7 @@ int insert_at_end(char *fname,char *fname1,char *bitmap)
 }
 
 // in progress
-int delete_at_end(char *fname,int delnum,char *bitmap)
+/*int delete_at_end(char *fname,int delnum,char *bitmap)
 {
     int i,j,k;
 
@@ -529,7 +529,7 @@ int delete_at_end(char *fname,int delnum,char *bitmap)
         k = delnum / disk_meta . blk_size;
     }
 
-}
+}*/
 
 int read_bytes(char *fname,char *outname, int startnum,int tnum)
 {
