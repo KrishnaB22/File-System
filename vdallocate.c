@@ -563,25 +563,47 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
     memset(buf,0,disk_meta.blk_size);
 
     int start = 0;
-    int fblock = startnum / disk_meta .blk_size;
-    int end_blkno = (startnum + tnum) / disk_meta .blk_size;
+    int fblock = startnum / disk_meta . blk_size;
+    int end_blkno = (startnum + tnum) / disk_meta . blk_size;
 
+    char *temp,*temp2;
+    if(fblock == end_blkno)
+    {
+        temp = malloc(disk_meta .blk_size * sizeof(char));
+        temp2 = malloc(disk_meta .blk_size * sizeof(char));
+    }
+    else
+    {
+        int t = end_blkno - fblock;
+        temp = malloc((t* disk_meta.blk_size) * sizeof(char));
+        temp 2 = malloc((t* disk_meta.blk_size) * sizeof(char));
+    }
+    
+    j = 0;
     while(count > 0)
     {
-        for(i =0 ; i< (arrsize - 1) ;i++)
+        for(i=0 ; i< (arrsize - 1) ;i++)
         {
             if(blk_nos[i] > 0)
             {
-                read_block(buf,blk_nos[i]);
-                if(start >= startnum)
+                start++;
+                if(start >= fblock && start <= end_blkno)
                 {
-                    write(file_fd,buf,count);
+                    read_block(buf,blk_nos[i]);
+                    j = j + disk_meta . blk_size;
+                    memcpy((temp + j),buf,disk_meta .blk_size);
+                }
+                if(count < disk_meta.blk_size)
+                {
                     count = 0;
                     break;
                 }
-                write(file_fd,buf,disk_meta.blk_size);
-                count = count - disk_meta.blk_size;
             }
+            count = count - disk_meta.blk_size;
+        }
+        if(start > end_blkno)
+        {
+            break;
         }
         if(count == 0)
         {
@@ -590,12 +612,18 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
         k = arrsize -1;
         if(blk_nos[k] > 0)
         {
+            end_listno = blk_nos[k];
             memset(buf, 0, disk_meta.blk_size);
             read_block(buf,blk_nos[k]);
             memcpy(blk_nos, buf, disk_meta.blk_size);
-        }
-
+        } 
     }
+
+    if(startnum % disk_meta.blk_size != 0)
+    {
+        
+    }
+
 
 }
 
