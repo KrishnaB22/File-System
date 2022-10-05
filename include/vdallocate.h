@@ -13,17 +13,19 @@
 
 //----------------------
 #include"diskdriver.h"
-#include"bitio.h"
+#include"bitmap.h"
 #include"disk_util.h"
 #include"filenode.h"
-
-
-char *disk_init();
-
-int get_free_disk_size(char *bitmap);
+#include"diskfunc.h"
 
 int add_file(char *fname,char *bitmap);
 
-void read_file(char *fname);
+void read_file(char *fname,char *outname);
+
+int delete_file(char *fname,char *bitmap);
+
+int insert_at_end(char *fname,char *fname1,char *bitmap);
+
+int delete_at_end(char *fname,int delnum,char *bitmap);
 
 #endif

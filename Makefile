@@ -5,7 +5,7 @@ INCLUDE_DIR = $(FS_DIR)/include
 CFLAGS = -I$(INCLUDE_DIR)
 
 TARGET = diskop
-files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c 
+files := vdallocate.c diskdriver.c filenode.c bitmap.c disk_util.c diskfunc.c
 
 all:
 	$(CC) $(files) -o $(TARGET) $(CFLAGS)
@@ -15,4 +15,4 @@ create:
 	gcc vdcreate.c -o vdcreate && ./vdcreate mydisk 134217728 1024 16384
 
 clean:
-	rm -rf *.o
+	rm -rf *.o $(TARGET)
