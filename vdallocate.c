@@ -531,7 +531,7 @@ int insert_at_end(char *fname,char *fname1,char *bitmap)
 
 }*/
 
-int read_bytes(char *fname,char *outname, int startnum,int tnum)
+int read_bytes(char *fname,char *outname, int startnum,int tnum,char *out)
 {
     int i,j,k;
     i = get_file_node(fname); 
@@ -566,17 +566,15 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
     int fblock = startnum / disk_meta . blk_size;
     int end_blkno = (startnum + tnum) / disk_meta . blk_size;
 
-    char *temp,*temp2;
+    char *temp;
     if(fblock == end_blkno)
     {
         temp = malloc(disk_meta .blk_size * sizeof(char));
-        temp2 = malloc(disk_meta .blk_size * sizeof(char));
     }
     else
     {
         int t = end_blkno - fblock;
         temp = malloc((t* disk_meta.blk_size) * sizeof(char));
-        temp2 = malloc((t* disk_meta.blk_size) * sizeof(char));
     }
     
     j = 0;
@@ -617,12 +615,12 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
             memcpy(blk_nos, buf, disk_meta.blk_size);
         } 
     }
+    
+    k = startnum % disk_meta.blk_size;
+    
+    memcpy(out,(temp + k),tnum);
 
-    if(startnum % disk_meta.blk_size != 0)
-    {
-        
-    }
-
+    return 1;
 
 }
 
