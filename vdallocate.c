@@ -576,7 +576,7 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
     {
         int t = end_blkno - fblock;
         temp = malloc((t* disk_meta.blk_size) * sizeof(char));
-        temp 2 = malloc((t* disk_meta.blk_size) * sizeof(char));
+        temp2 = malloc((t* disk_meta.blk_size) * sizeof(char));
     }
     
     j = 0;
@@ -586,7 +586,6 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
         {
             if(blk_nos[i] > 0)
             {
-                start++;
                 if(start >= fblock && start <= end_blkno)
                 {
                     read_block(buf,blk_nos[i]);
@@ -599,6 +598,7 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
                     break;
                 }
             }
+            start++;
             count = count - disk_meta.blk_size;
         }
         if(start > end_blkno)
@@ -612,7 +612,6 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum)
         k = arrsize -1;
         if(blk_nos[k] > 0)
         {
-            end_listno = blk_nos[k];
             memset(buf, 0, disk_meta.blk_size);
             read_block(buf,blk_nos[k]);
             memcpy(blk_nos, buf, disk_meta.blk_size);
