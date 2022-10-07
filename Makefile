@@ -16,3 +16,8 @@ create:
 
 clean:
 	rm -rf mydisk $(TARGET) out.txt vdcreate
+
+commit:
+	git add . \
+	git commit -a \
+	git push
