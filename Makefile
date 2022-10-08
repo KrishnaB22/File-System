@@ -21,4 +21,4 @@ clean:
 commit:
 	git add . && \
 	git commit -m "update" && \
-	git push
+	git push  https://github.com/KrishnaB22/fs.git
