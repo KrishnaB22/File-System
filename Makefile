@@ -12,12 +12,12 @@ all:
 
 
 create:
-	gcc vdcreate.c -o vdcreate && ./vdcreate mydisk 134217728 1024 16384
+	gcc vdcreate.c -o vdcreate && \
+	./vdcreate mydisk 134217728 1024 16384
 
 clean:
 	rm -rf mydisk $(TARGET) out.txt vdcreate
 
 commit:
-	git add . && \
 	git commit -a -m "update" && \
 	git push
