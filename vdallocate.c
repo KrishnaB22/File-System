@@ -658,7 +658,7 @@ int main(int argc,char **argv)
     // displaybitmap(bitmap);
     // dis_file_meta();
     // display_diskmeta();
-    // sample
+    // sample new
 
     write_bitmap_disk(bitmap);
 
