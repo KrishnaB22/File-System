@@ -19,5 +19,6 @@ clean:
 	rm -rf mydisk $(TARGET) out.txt vdcreate
 
 commit:
-	git commit -a -m "update" && \
+	git add . && \
+	git commit -m "update" && \
 	git push
