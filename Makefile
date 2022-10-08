@@ -21,4 +21,4 @@ clean:
 commit:
 	git add . && \
 	git commit -m "update" && \
-	git push fs main
+	git push --set-upstream origin main
