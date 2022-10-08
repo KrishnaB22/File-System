@@ -13,8 +13,8 @@ typedef struct disk_info{
 typedef struct file_info{
     char is_free;
     char file_name[247];
-    int file_size;
-    int ptr_to_blk;
+    unsigned int file_size;
+    unsigned int ptr_to_blk;
 }file_info;
 
 int disk_fd;

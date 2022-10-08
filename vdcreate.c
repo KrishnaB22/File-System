@@ -50,8 +50,8 @@ int main(int argc,char **argv)
         exit(EXIT_FAILURE);
     }
 
-    char *buf;
-    buf = (char *)malloc(b_size*sizeof(char));
+    unsigned char *buf;
+    buf = (unsigned char *)malloc(b_size*sizeof(char));
     memset(buf,0,b_size);
     memcpy(buf,disk,b_size);
     write(disk_fd,buf,b_size);
@@ -86,6 +86,8 @@ int main(int argc,char **argv)
 
     unsigned char bitmap;
     unsigned char *temp;
+
+
     for(i=0;i<total_bit_char;i++)
     {
         if(i < max_val_char)
@@ -105,16 +107,41 @@ int main(int argc,char **argv)
         write(disk_fd,temp,1);
     }
 
-    i = 4;
-    j = 0;
+
+
+
+/////////////////////////////
+// Writing file metadata
+    
+    // i = 4;
+    // j = 0;
+    // memset(buf,0,b_size);
+    // file_info file_meta ={'\0',"\0",0,0};
+    // while(j < disk -> total_files)
+    // {
+    //     memcpy(buf,&file_meta,sizeof(file_info));
+    //     write(disk_fd,buf,sizeof(file_info));
+    //     memset(buf,0,b_size);
+    //     j++;
+    // }
+
+
+
     memset(buf,0,b_size);
+    i =0;
+    j =0;
     file_info file_meta ={'\0',"\0",0,0};
-    while(j < disk -> total_files)
+    int meta_per_block = disk_meta .blk_size / sizeof(file_info);
+    while(i < disk -> total_files)
     {
-        memcpy(buf,&file_meta,sizeof(file_info));
-        write(disk_fd,buf,sizeof(file_info));
-        memset(buf,0,b_size);
-        j++;
+        while(j < meta_per_block)
+        {
+            memcpy((buf+(j*sizeof(file_info))), &file_meta, sizeof(file_info));
+            j++;
+        }
+        write(disk_fd, buf, b_size);
+        i++;
+        j = 0;
     }
 
     

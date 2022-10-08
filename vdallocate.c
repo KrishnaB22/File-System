@@ -617,7 +617,7 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum,char *out)
     }
     
     k = startnum % disk_meta.blk_size;
-    
+    memset(out,0,tnum);
     memcpy(out,(temp + k),tnum);
 
     return 1;
@@ -630,6 +630,7 @@ int main(int argc,char **argv)
     int i,j,k;
     char *bitmap;
     bitmap = disk_init();
+    displaybitmap(bitmap);
 
     char *fname,*outname;
     fname = (char *)malloc(200*sizeof(char));
@@ -648,7 +649,7 @@ int main(int argc,char **argv)
         printf("Unable to add file \n");
     }
 
-    insert_at_end(fname,fname,bitmap);
+    //insert_at_end(fname,fname,bitmap);
     read_file(fname,outname);
     
 
@@ -658,7 +659,7 @@ int main(int argc,char **argv)
     // displaybitmap(bitmap);
     // dis_file_meta();
     // display_diskmeta();
-    // sample new
+    // sample new ///////
 
     write_bitmap_disk(bitmap);
 
