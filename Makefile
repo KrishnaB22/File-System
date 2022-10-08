@@ -21,4 +21,4 @@ clean:
 commit:
 	git add . && \
 	git commit -m "update" && \
-	git push fs master
+	git push fs main
