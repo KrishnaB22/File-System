@@ -1,0 +1,13 @@
+add
+inputs/sample_test.txt
+inputs/sample_test.txt
+add
+inputs/video.mp4
+inputs/video.mp4
+add
+inputs/Capture.PNG
+inputs/Capture.PNG
+read
+inputs/video.mp4
+out.mp4
+end

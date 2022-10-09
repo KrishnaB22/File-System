@@ -624,22 +624,82 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum,char *out)
 
 }
 
+void user_actions(char *ufname,char *bitmap)
+{
+    int i,j;
+    FILE *fp = fopen(ufname,"r");
+
+    char *action,*fname,*outname;
+    action = (char *)malloc(10*sizeof(char));
+    fname = (char *)malloc(200*sizeof(char));
+    outname = (char *)malloc(200*sizeof(char));
+
+    while(1)
+    {
+
+        fgets(action, 10, fp);
+        if(strcmp(action,"end")== 0)
+        {
+            printf("Done\n");
+            break;
+        }
+        fgets(fname, 200, fp);
+        fgets(outname, 200, fp);
+        // printf("action = %s",action);
+        // printf("fname = %s\n",fname);
+        // printf("outname = %s\n",outname);
+        // printf("res = %d\n",strcmp(action,"add"));
+
+        if(strcmp(action,"add\n")== 0)
+        {
+            printf("adding file\n");
+            add_file(fname,outname,bitmap);
+            continue;
+        }
+
+        if(strcmp(action,"read\n")== 0)
+        {
+            printf("reading file\n");
+            read_file(fname,outname);
+            continue;
+        }
+
+        if(strcmp(action,"delete\n")== 0)
+        {
+            delete_file(fname,bitmap);
+            continue;
+        }
+
+        if(strcmp(action,"insend\n")== 0)
+        {
+            insert_at_end(fname,outname,bitmap);
+            continue;
+        }
+
+    }
+
+}
 
 int main(int argc,char **argv)
 {
     int i,j,k;
     char *bitmap;
     bitmap = disk_init();
-    displaybitmap(bitmap);
+    //displaybitmap(bitmap);
 
     char *fname,*outname;
     fname = (char *)malloc(200*sizeof(char));
     outname = (char *)malloc(200*sizeof(char));
 
     fname = argv[1];
-    outname = argv[2];
+    outname = "out.txt";
 
-    i = add_file(fname,bitmap);
+    user_actions(fname,bitmap);
+
+
+
+
+    i = add_file(fname,fname,bitmap);
     if(i == 1)
     {
         printf("file added succesfully\n");
@@ -654,15 +714,16 @@ int main(int argc,char **argv)
     
 
 
-    printf("free size on disk = %d\n",get_free_disk_size(bitmap));
+    // printf("free size on disk = %d\n",get_free_disk_size(bitmap));
 
     // displaybitmap(bitmap);
     // dis_file_meta();
     // display_diskmeta();
-    // sample new ///////
 
     write_bitmap_disk(bitmap);
 
     close(disk_fd);
 }
+
+
 
