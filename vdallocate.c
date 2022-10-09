@@ -702,18 +702,18 @@ int main(int argc,char **argv)
 
 
 
-    i = add_file(fname,fname,bitmap);
-    if(i == 1)
-    {
-        printf("file added succesfully\n");
-    }
-    else
-    {
-        printf("Unable to add file \n");
-    }
+    // i = add_file(fname,fname,bitmap);
+    // if(i == 1)
+    // {
+    //     printf("file added succesfully\n");
+    // }
+    // else
+    // {
+    //     printf("Unable to add file \n");
+    // }
 
-    //insert_at_end(fname,fname,bitmap);
-    read_file(fname,outname);
+    // //insert_at_end(fname,fname,bitmap);
+    // read_file(fname,outname);
     
 
 
