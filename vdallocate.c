@@ -3,13 +3,13 @@
 unsigned int free_disk_space = 0;
 
 
-int add_file(char *fname,char *bitmap)
+int add_file(char *fname,char *outname,char *bitmap)
 {
     int file_fd,i,j,k;
-    file_fd = open(fname,O_RDONLY);
+    file_fd = open(outname,O_RDONLY);
     if(file_fd == -1)
     {
-        printf("Unable to open file %s\n",fname);
+        printf("Unable to open file %s\n",outname);
         return 0;
     }
 
@@ -649,6 +649,9 @@ void user_actions(char *ufname,char *bitmap)
         // printf("fname = %s\n",fname);
         // printf("outname = %s\n",outname);
         // printf("res = %d\n",strcmp(action,"add"));
+
+        fname[strcspn(fname, "\n")] = '\0';
+        outname[strcspn(outname, "\n")] = '\0';
 
         if(strcmp(action,"add\n")== 0)
         {

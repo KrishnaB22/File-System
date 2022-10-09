@@ -18,7 +18,7 @@
 #include"filenode.h"
 #include"diskfunc.h"
 
-int add_file(char *fname,char *bitmap);
+int add_file(char *fname,char *outname,char *bitmap);
 
 void read_file(char *fname,char *outname);
 
