@@ -17,14 +17,15 @@
 #include"disk_util.h"
 #include"filenode.h"
 #include"diskfunc.h"
+#include"vdadd.h"
 
-int add_file(char *fname,char *outname,char *bitmap);
+
 
 void read_file(char *fname,char *outname);
 
 int delete_file(char *fname,char *bitmap);
 
-int insert_at_end(char *fname,char *fname1,char *bitmap);
+
 
 int delete_at_end(char *fname,int delnum,char *bitmap);
 
