@@ -5,6 +5,7 @@ INCLUDE_DIR = $(FS_DIR)/include
 CFLAGS = -I$(INCLUDE_DIR)
 
 TARGET = diskop
+new = diskop
 files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c diskfunc.c vdadd.c vdread.c vddelete.c
 
 all:
