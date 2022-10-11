@@ -13,19 +13,18 @@
 
 //----------------------
 #include"diskdriver.h"
-#include"bitmap.h"
+#include"bitio.h"
 #include"disk_util.h"
 #include"filenode.h"
 #include"diskfunc.h"
 #include"vdadd.h"
+#include"vdread.h"
 
 
 
-void read_file(char *fname,char *outname);
+
 
 int delete_file(char *fname,char *bitmap);
-
-
 
 int delete_at_end(char *fname,int delnum,char *bitmap);
 
