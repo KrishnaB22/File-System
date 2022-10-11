@@ -645,35 +645,32 @@ void user_actions(char *ufname,char *bitmap)
         }
         fgets(fname, 200, fp);
         fgets(outname, 200, fp);
-        // printf("action = %s",action);
-        // printf("fname = %s\n",fname);
-        // printf("outname = %s\n",outname);
-        // printf("res = %d\n",strcmp(action,"add"));
-
+        
         fname[strcspn(fname, "\n")] = '\0';
         outname[strcspn(outname, "\n")] = '\0';
+        action[strcspn(action,"\n")] = '\0';
 
-        if(strcmp(action,"add\n")== 0)
+        if(strcmp(action,"add")== 0)
         {
             printf("adding file\n");
             add_file(fname,outname,bitmap);
             continue;
         }
 
-        if(strcmp(action,"read\n")== 0)
+        if(strcmp(action,"read")== 0)
         {
             printf("reading file\n");
             read_file(fname,outname);
             continue;
         }
 
-        if(strcmp(action,"delete\n")== 0)
+        if(strcmp(action,"delete")== 0)
         {
             delete_file(fname,bitmap);
             continue;
         }
 
-        if(strcmp(action,"insend\n")== 0)
+        if(strcmp(action,"insend")== 0)
         {
             insert_at_end(fname,outname,bitmap);
             continue;
