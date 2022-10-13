@@ -30,7 +30,8 @@ int add_file(char *fname,char *outname,char *bitmap)
     {
         return 0;
     }
-
+    int total_space = ceil((file_size / disk_meta . blk_size) / ((disk_meta .blk_size / sizeof(int)) -1)) * disk_meta .blk_size;
+    total_space = total_space + file_size ;
     int free_space = get_free_disk_size(bitmap);
     if(free_space == 0)
     {
@@ -38,7 +39,7 @@ int add_file(char *fname,char *outname,char *bitmap)
         return 0;
     }
 
-    if(free_space < file_size)
+    if(free_space < total_space)
     {
         printf("Not enough space on disk\n");
         return 0;

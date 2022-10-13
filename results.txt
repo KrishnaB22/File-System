@@ -1,1368 +1,303 @@
 ADD
 File Add sucessfully: inputs/input.txt
 ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/input.txt_0
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_4
-READ
-File Read sucessfully: inputs/input.txt_0
-READ
-File Read sucessfully: inputs/input.txt_0
-READ
-File Read sucessfully: inputs/Capture.PNG_2
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_8
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_9
-READ
-File Read sucessfully: inputs/input.txt_1
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_11
-READ
-File Read sucessfully: inputs/input.txt_1
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/Capture.PNG_2
-READ 
-File Read sucessfully: inputs/Capture.PNG_2
-READ
-File Read sucessfully: inputs/input.txt_0
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/Capture.PNG_19
-READ
-File Read sucessfully: inputs/input.txt_0
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_25
-READ
-File Read sucessfully: inputs/input.txt_1
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/video.mp4_23
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_31
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-READ
-File Read sucessfully: inputs/video.mp4_22
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_32
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_36
-READ
-File Read sucessfully: inputs/Capture.PNG_19
-ADD
 File Add sucessfully: inputs/input2.txt
 READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_40
-ADD
-File Add sucessfully: inputs/Capture.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_42
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_44
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/input.txt_0
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/input.txt
-READ
-File Read sucessfully: inputs/video.mp4_23
-READ
-File Read sucessfully: inputs/Capture.PNG_2
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_52
-READ
 File Read sucessfully: inputs/input.txt_0
 READ
-File Read sucessfully: inputs/Capture.PNG_48
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_55
-READ
-File Read sucessfully: inputs/input.txt_1
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_32
+File Read sucessfully: inputs/input2.txt_1
 ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-ADD
-File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_61
-READ
-File Read sucessfully: inputs/video.mp4_22
-ADD
-File Add sucessfully: inputs/input.txt
-READ
-File Read sucessfully: inputs/Capture.PNG_48
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/Capture.PNG_41
-READ
-File Read sucessfully: inputs/sample_test.txt_45
-ADD
-File Add sucessfully: inputs/Capture.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_72
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-READ
-File Read sucessfully: inputs/input.txt_0
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_78
+File Add sucessfully: inputs/Mountain.jpg
 ADD
 File Add sucessfully: inputs/video.mp4
 ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_82
-READ
-File Read sucessfully: inputs/input.txt_63
-READ
-File Read sucessfully: inputs/input.txt_49
-READ
-File Read sucessfully: inputs/Capture.PNG_71
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_86
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-READ
-File Read sucessfully: inputs/input.txt_63
-READ
-File Read sucessfully: inputs/input2.txt_60
-READ
-File Read sucessfully: inputs/input2.txt_60
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_92
-READ
-File Read sucessfully: inputs/Capture.PNG_17
-READ
-File Read sucessfully: inputs/Capture.PNG_87
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_96
-READ
-File Read sucessfully: inputs/input.txt_66
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_99
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/video.mp4_28
-READ
-File Read sucessfully: inputs/video.mp4_58
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_67
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_104
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_105
-READ
-File Read sucessfully: inputs/Capture.PNG_2
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_107
-ADD
-File Add sucessfully: inputs/Capture.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_109
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_110
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_113
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/sample_test.txt_98
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_120
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/Capture.PNG_108
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_123
-ADD
-File Add sucessfully: inputs/script.py
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_125
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_126
-READ
-File Read sucessfully: inputs/video.mp4_58
-READ
-File Read sucessfully: inputs/input2.txt_60
-READ
-File Read sucessfully: inputs/script.py_34
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_117
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_133
-ADD
-File Add sucessfully: inputs/input2.txt
-READ
-File Read sucessfully: inputs/input2.txt_119
-READ
-File Read sucessfully: inputs/video.mp4_114
-READ
-File Read sucessfully: inputs/video.mp4_79
-READ
-File Read sucessfully: inputs/script.py_124
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_139
-READ
-File Read sucessfully: inputs/input.txt_49
-READ
-File Read sucessfully: inputs/script.py_34
-READ
-File Read sucessfully: inputs/input2.txt_38
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_117
-READ
-File Read sucessfully: inputs/video.mp4_130
-ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/video.mp4_100
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_148
+File Add sucessfully: inputs/Mountain.jpg
 ADD
 File Add sucessfully: inputs/Capture.PNG
 ADD
-File Add sucessfully: inputs/video.mp4
+File Add sucessfully: inputs/MidnightEmbers.png
 DELETE
 file not found
-Not file Delete sucessfully: inputs/input2.txt_151
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_152
-READ
-File Read sucessfully: inputs/video.mp4_22
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_154
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_155
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_156
-ADD
-File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_158
-ADD
-File Add sucessfully: inputs/sample_test.txt
+Not file Delete sucessfully: inputs/video.mp4_9
 ADD
 File Add sucessfully: inputs/input.txt
 DELETE
 file not found
-Not file Delete sucessfully: inputs/Capture.PNG_161
-READ
-File Read sucessfully: inputs/input.txt_160
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/script.py_27
-READ
-File Read sucessfully: inputs/script.py_124
+Not file Delete sucessfully: inputs/Capture.PNG_11
 DELETE
 file not found
-Not file Delete sucessfully: inputs/video.mp4_167
+Not file Delete sucessfully: inputs/WorldDaylight.jpg_12
 DELETE
 file not found
-Not file Delete sucessfully: inputs/Capture.PNG_168
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_170
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_171
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_173
+Not file Delete sucessfully: inputs/WorldDaylight.jpg_13
 ADD
 File Add sucessfully: inputs/video.mp4
 READ
-File Read sucessfully: inputs/input2.txt_112
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/script.py
+File Read sucessfully: inputs/video.mp4_14
 READ
-File Read sucessfully: inputs/video.mp4_100
-READ
-File Read sucessfully: inputs/sample_test.txt_77
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/input.txt_160
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_182
+File Read sucessfully: inputs/video.mp4_14
 ADD
 File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
+READ
+File Read sucessfully: inputs/input2.txt_17
 DELETE
 file not found
-Not file Delete sucessfully: inputs/sample_test.txt_185
+Not file Delete sucessfully: inputs/Capture.PNG_19
 READ
-File Read sucessfully: inputs/input2.txt_157
-READ
-File Read sucessfully: inputs/Capture.PNG_19
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
+File Read sucessfully: inputs/MidnightEmbers.png_8
 DELETE
 file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_189
+Not file Delete sucessfully: inputs/input2.txt_21
+READ
+File Read sucessfully: inputs/Mountain.jpg_6
+DELETE
+file not found
+Not file Delete sucessfully: inputs/video.mp4_23
+ADD
+File Add sucessfully: inputs/video.mp4
+READ
+File Read sucessfully: inputs/input2.txt_17
 ADD
 File Add sucessfully: inputs/Capture.PNG
 DELETE
 file not found
-Not file Delete sucessfully: inputs/script.py_191
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_192
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
+Not file Delete sucessfully: inputs/outfromdisk.PNG_27
 ADD
 File Add sucessfully: inputs/outfromdisk.PNG
 READ
-File Read sucessfully: inputs/input.txt_1
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_196
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_197
+File Read sucessfully: inputs/Capture.PNG_26
 READ
-File Read sucessfully: inputs/Capture.PNG_48
+File Read sucessfully: inputs/video.mp4_24
+ADD
+File Add sucessfully: inputs/video.mp4
+READ
+File Read sucessfully: inputs/input.txt_10
+READ
+File Read sucessfully: inputs/outfromdisk.PNG_28
+DELETE
+file not found
+Not file Delete sucessfully: inputs/video.mp4_34
+ADD
+File Add sucessfully: inputs/Mountain.jpg
 ADD
 File Add sucessfully: inputs/script.py
 READ
-File Read sucessfully: inputs/script.py_121
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_201
+File Read sucessfully: inputs/Capture.PNG_26
 ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/input2.txt_38
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_204
+File Add sucessfully: inputs/Mountain.jpg
 ADD
 File Add sucessfully: inputs/outfromdisk.PNG
+READ
+File Read sucessfully: inputs/outfromdisk.PNG_39
+READ
+File Read sucessfully: inputs/outfromdisk.PNG_28
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Stretch.png_42
+DELETE
+file not found
+Not file Delete sucessfully: inputs/input.txt_43
+DELETE
+file not found
+Not file Delete sucessfully: inputs/script.py_44
+READ
+File Read sucessfully: inputs/Mountain.jpg_6
 ADD
-File Add sucessfully: inputs/video.mp4
+File Add sucessfully: inputs/Mountain.jpg
+READ
+File Read sucessfully: inputs/input.txt_0
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Mountain.jpg_48
+DELETE
+file not found
+Not file Delete sucessfully: inputs/WorldDaylight.jpg_49
+DELETE
+file not found
+Not file Delete sucessfully: inputs/WorldDaylight.jpg_50
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Capture.PNG_51
 ADD
 File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_208
 READ
-File Read sucessfully: inputs/outfromdisk.PNG_67
+File Read sucessfully: inputs/MidnightEmbers.png_8
 DELETE
 file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_210
+Not file Delete sucessfully: inputs/sample_test.txt_54
+ADD
+File Add sucessfully: inputs/video.mp4
+READ
+File Read sucessfully: inputs/Mountain.jpg_6
+READ
+File Read sucessfully: inputs/Mountain.jpg_4
+ADD
+File Add sucessfully: inputs/sample_test.txt
+READ
+File Read sucessfully: inputs/input2.txt_52
+DELETE
+file not found
+Not file Delete sucessfully: inputs/WorldDaylight.jpg_60
+READ
+File Read sucessfully: inputs/video.mp4_31
+ADD
+File Add sucessfully: inputs/MidnightEmbers.png
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Stretch.png_63
+ADD
+File Add sucessfully: inputs/sample_test.txt
+ADD
+File Add sucessfully: inputs/WorldDaylight.jpg
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Capture.PNG_66
+ADD
+File Add sucessfully: inputs/WorldDaylight.jpg
+ADD
+File Add sucessfully: inputs/input.txt
+READ
+File Read sucessfully: inputs/Mountain.jpg_35
+DELETE
+file not found
+Not file Delete sucessfully: inputs/sample_test.txt_70
+ADD
+File Add sucessfully: inputs/MidnightEmbers.png
+ADD
+File Add sucessfully: inputs/Stretch.png
+READ
+File Read sucessfully: inputs/Capture.PNG_7
+DELETE
+file not found
+Not file Delete sucessfully: inputs/input.txt_74
+ADD
+File Add sucessfully: inputs/WorldDaylight.jpg
+ADD
+File Add sucessfully: inputs/video.mp4
+DELETE
+file not found
+Not file Delete sucessfully: inputs/MidnightEmbers.png_77
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Mountain.jpg_78
+READ
+File Read sucessfully: inputs/script.py_36
+ADD
+File Add sucessfully: inputs/sample_test.txt
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Stretch.png_81
+ADD
+File Add sucessfully: inputs/Capture.PNG
+ADD
+File Add sucessfully: inputs/script.py
+READ
+File Read sucessfully: inputs/Capture.PNG_7
+DELETE
+file not found
+Not file Delete sucessfully: inputs/WorldDaylight.jpg_85
+READ
+File Read sucessfully: inputs/Mountain.jpg_46
+READ
+File Read sucessfully: inputs/input2.txt_52
+READ
+File Read sucessfully: inputs/video.mp4_5
+ADD
+Not enough space on disk
+Not file Add sucessfully: inputs/MidnightEmbers.png
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Mountain.jpg_90
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Capture.PNG_91
+ADD
+File Add sucessfully: inputs/sample_test.txt
+ADD
+Not enough space on disk
+Not file Add sucessfully: inputs/WorldDaylight.jpg
+READ
+File Read sucessfully: inputs/Capture.PNG_82
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Capture.PNG_95
+ADD
+File Add sucessfully: inputs/script.py
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Mountain.jpg_97
+READ
+File Read sucessfully: inputs/Mountain.jpg_46
+ADD
+File Add sucessfully: inputs/Capture.PNG
+READ
+File Read sucessfully: inputs/video.mp4_31
+READ
+File Read sucessfully: inputs/Capture.PNG_99
+READ
+File Read sucessfully: inputs/Capture.PNG_26
+READ
+File Read sucessfully: inputs/script.py_83
+ADD
+File Add sucessfully: inputs/script.py
+DELETE
+file not found
+Not file Delete sucessfully: inputs/video.mp4_105
+READ
+File Read sucessfully: inputs/Mountain.jpg_35
+ADD
+File Add sucessfully: inputs/input.txt
+DELETE
+file not found
+Not file Delete sucessfully: inputs/Mountain.jpg_108
 READ
 File Read sucessfully: inputs/sample_test.txt_80
 DELETE
 file not found
-Not file Delete sucessfully: inputs/sample_test.txt_212
+Not file Delete sucessfully: inputs/Capture.PNG_110
 READ
-File Read sucessfully: inputs/input2.txt_38
+File Read sucessfully: inputs/Capture.PNG_99
 ADD
-File Add sucessfully: inputs/script.py
+Not enough space on disk
+Not file Add sucessfully: inputs/Stretch.png
 ADD
-File Add sucessfully: inputs/Capture.PNG
+Not enough space on disk
+Not file Add sucessfully: inputs/video.mp4
 DELETE
 file not found
-Not file Delete sucessfully: inputs/input.txt_216
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_47
-READ
-File Read sucessfully: inputs/video.mp4_174
+Not file Delete sucessfully: inputs/sample_test.txt_114
 DELETE
 file not found
-Not file Delete sucessfully: inputs/script.py_219
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_169
+Not file Delete sucessfully: inputs/MidnightEmbers.png_115
 ADD
 File Add sucessfully: inputs/sample_test.txt
 DELETE
 file not found
-Not file Delete sucessfully: inputs/script.py_222
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_223
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_225
-READ
-File Read sucessfully: inputs/script.py_27
-READ
-File Read sucessfully: inputs/sample_test.txt_98
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_228
-READ
-File Read sucessfully: inputs/script.py_199
-READ
-File Read sucessfully: inputs/sample_test.txt_77
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/Capture.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_235
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_240
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/video.mp4_28
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_245
-READ
-File Read sucessfully: inputs/script.py_34
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_247
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/video.mp4_238
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_251
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/input2.txt_207
-READ
-File Read sucessfully: inputs/video.mp4_111
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_258
-READ
-File Read sucessfully: inputs/Capture.PNG_2
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_260
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_261
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_262
-READ
-File Read sucessfully: inputs/Capture.PNG_48
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_265
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_194
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_267
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/script.py_27
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/sample_test.txt_81
-ADD
-File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_273
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_275
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_276
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_277
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_176
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/video.mp4_23
-READ
-File Read sucessfully: inputs/video.mp4_174
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_283
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_284
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_285
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/script.py_73
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_288
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_117
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_291
-READ
-File Read sucessfully: inputs/Capture.PNG_286
-READ
-File Read sucessfully: inputs/sample_test.txt_221
-ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_264
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/input.txt_160
-ADD
-File Add sucessfully: inputs/Capture.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_301
-READ
-File Read sucessfully: inputs/Capture.PNG_300
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/Capture.PNG_108
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_305
-READ
-File Read sucessfully: inputs/Capture.PNG_149
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_307
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_309
-ADD
-File Add sucessfully: inputs/Capture.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_311
-READ
-File Read sucessfully: inputs/Capture.PNG_108
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_313
-READ
-File Read sucessfully: inputs/script.py_214
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_315
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_316
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_317
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_318
-READ
-File Read sucessfully: inputs/video.mp4_268
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/video.mp4_22
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_324
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_325
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_326
-READ
-File Read sucessfully: inputs/sample_test.txt_145
-READ
-File Read sucessfully: inputs/sample_test.txt_279
-ADD
-File Add sucessfully: inputs/input2.txt
-READ
-File Read sucessfully: inputs/sample_test.txt_159
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_332
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_333
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_334
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_338
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_340
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/input2.txt_297
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_344
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_345
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_346
-READ
-File Read sucessfully: inputs/script.py_252
-READ
-File Read sucessfully: inputs/Capture.PNG_248
-READ
-File Read sucessfully: inputs/sample_test.txt_279
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_350
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_351
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_352
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_205
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/Capture.PNG_234
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_359
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_360
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_47
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_362
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_363
-READ
-File Read sucessfully: inputs/sample_test.txt_145
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_366
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_371
-READ
-File Read sucessfully: inputs/script.py_199
-ADD
-File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_374
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_375
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/script.py_34
-READ
-File Read sucessfully: inputs/video.mp4_111
-READ
-File Read sucessfully: inputs/Capture.PNG_321
-READ
-File Read sucessfully: inputs/script.py_65
-READ
-File Read sucessfully: inputs/script.py_121
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_382
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_383
-ADD
-File Add sucessfully: inputs/script.py
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_385
-READ
-File Read sucessfully: inputs/input2.txt_373
-READ
-File Read sucessfully: inputs/input2.txt_329
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_388
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_389
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_391
-READ
-File Read sucessfully: inputs/input2.txt_157
-READ
-File Read sucessfully: inputs/sample_test.txt_342
-READ
-File Read sucessfully: inputs/script.py_384
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_395
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/input2.txt_329
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_398
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_400
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_401
-READ
-File Read sucessfully: inputs/sample_test.txt_279
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/sample_test.txt_331
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/sample_test.txt_164
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_409
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/script.py
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_412
-READ
-File Read sucessfully: inputs/Capture.PNG_396
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_414
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_415
-ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/input2.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_418
-READ
-File Read sucessfully: inputs/video.mp4_13
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_420
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_421
-READ
-File Read sucessfully: inputs/Capture.PNG_310
-ADD
-File Add sucessfully: inputs/input.txt
-READ
-File Read sucessfully: inputs/video.mp4_13
-READ
-File Read sucessfully: inputs/input.txt_1
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_426
-READ
-File Read sucessfully: inputs/input2.txt_157
-READ
-File Read sucessfully: inputs/video.mp4_68
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_429
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_430
-READ
-File Read sucessfully: inputs/sample_test.txt_407
-READ
-File Read sucessfully: inputs/Capture.PNG_321
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-READ
-File Read sucessfully: inputs/video.mp4_58
-ADD
-File Add sucessfully: inputs/script.py
-ADD
-File Add sucessfully: inputs/video.mp4
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_438
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_439
-READ
-File Read sucessfully: inputs/input2.txt_207
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_441
-READ
-File Read sucessfully: inputs/sample_test.txt_308
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_443
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_444
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_445
-READ
-File Read sucessfully: inputs/Capture.PNG_149
-READ
-File Read sucessfully: inputs/video.mp4_79
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_448
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_449
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_450
-READ
-File Read sucessfully: inputs/video.mp4_202
-READ
-File Read sucessfully: inputs/Capture.PNG_248
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_453
-READ
-File Read sucessfully: inputs/input.txt_399
-READ
-File Read sucessfully: inputs/sample_test.txt_80
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-READ
-File Read sucessfully: inputs/script.py_115
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_458
-READ
-File Read sucessfully: inputs/script.py_27
-READ
-File Read sucessfully: inputs/input2.txt_119
-READ
-File Read sucessfully: inputs/Capture.PNG_17
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_465
-ADD
-File Add sucessfully: inputs/input.txt
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/Capture.PNG_321
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_472
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_473
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/Capture.PNG
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/input.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_478
-ADD
-File Add sucessfully: inputs/input2.txt
-READ
-File Read sucessfully: inputs/Capture.PNG_410
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_481
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_482
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_483
-READ
-File Read sucessfully: inputs/sample_test.txt_469
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_485
-READ
-File Read sucessfully: inputs/input2.txt_479
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_489
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_490
-READ
-File Read sucessfully: inputs/input.txt_66
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_492
-READ
-File Read sucessfully: inputs/script.py_270
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_494
-ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_497
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/script.py_241
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_500
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_337
-READ
-File Read sucessfully: inputs/Capture.PNG_403
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/Capture.PNG
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_508
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_509
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_510
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_511
-READ
-File Read sucessfully: inputs/sample_test.txt_342
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_513
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/Capture.PNG_2
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_75
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_517
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_518
-READ
-File Read sucessfully: inputs/input.txt_282
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/script.py_180
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_522
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_524
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_525
-ADD
-File Add sucessfully: inputs/sample_test.txt
-ADD
-File Add sucessfully: inputs/script.py
-READ
-File Read sucessfully: inputs/sample_test.txt_469
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_529
-READ
-File Read sucessfully: inputs/input2.txt_297
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_531
-DELETE
-file not found
-Not file Delete sucessfully: inputs/sample_test.txt_532
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/script.py_384
-READ
-File Read sucessfully: inputs/input.txt_466
-READ
-File Read sucessfully: inputs/Capture.PNG_41
-ADD
-File Add sucessfully: inputs/input2.txt
-READ
-File Read sucessfully: inputs/input2.txt_336
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_539
-READ
-File Read sucessfully: inputs/script.py_232
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_541
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_24
-READ
-File Read sucessfully: inputs/input.txt_282
-READ
-File Read sucessfully: inputs/Capture.PNG_48
-ADD
-File Add sucessfully: inputs/input2.txt
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/sample_test.txt
-DELETE
-file not found
-Not file Delete sucessfully: inputs/video.mp4_548
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_193
-ADD
-File Add sucessfully: inputs/sample_test.txt
-READ
-File Read sucessfully: inputs/script.py_436
-ADD
-File Add sucessfully: inputs/Capture.PNG
-READ
-File Read sucessfully: inputs/sample_test.txt_279
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_555
-DELETE
-file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_556
-READ
-File Read sucessfully: inputs/script.py_369
-READ
-File Read sucessfully: inputs/input.txt_423
-READ
-File Read sucessfully: inputs/Capture.PNG_404
-ADD
-File Add sucessfully: inputs/input2.txt
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_188
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_501
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/sample_test.txt_407
-ADD
-File Add sucessfully: inputs/video.mp4
-DELETE
-file not found
-Not file Delete sucessfully: inputs/Capture.PNG_566
-READ
-File Read sucessfully: inputs/video.mp4_111
-ADD
-File Add sucessfully: inputs/video.mp4
-READ
-File Read sucessfully: inputs/outfromdisk.PNG_184
-ADD
-File Add sucessfully: inputs/video.mp4
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
-ADD
-File Add sucessfully: inputs/sample_test.txt
+Not file Delete sucessfully: inputs/WorldDaylight.jpg_117
 READ
-File Read sucessfully: inputs/video.mp4_111
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_574
-DELETE
-file not found
-Not file Delete sucessfully: inputs/script.py_575
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input2.txt_576
+File Read sucessfully: inputs/MidnightEmbers.png_62
 ADD
-File Add sucessfully: inputs/script.py
-DELETE
-file not found
-Not file Delete sucessfully: inputs/input.txt_578
+Not enough space on disk
+Not file Add sucessfully: inputs/Stretch.png
 DELETE
 file not found
-Not file Delete sucessfully: inputs/video.mp4_579
+Not file Delete sucessfully: inputs/Mountain.jpg_120
 ADD
-File Add sucessfully: inputs/sample_test.txt
+Not enough space on disk
+Not file Add sucessfully: inputs/WorldDaylight.jpg
 READ
-File Read sucessfully: inputs/sample_test.txt_81
+file not found inputs/Stretch.png_112
+Not file Read sucessfully: inputs/Stretch.png_112
 DELETE
 file not found
-Not file Delete sucessfully: inputs/sample_test.txt_582
-READ
-File Read sucessfully: inputs/script.py_180
+Not file Delete sucessfully: inputs/Capture.PNG_123
 DELETE
 file not found
-Not file Delete sucessfully: inputs/outfromdisk.PNG_584
-ADD
-File Add sucessfully: inputs/outfromdisk.PNG
+Not file Delete sucessfully: inputs/MidnightEmbers.png_124
 DELETE
 file not found
-Not file Delete sucessfully: inputs/video.mp4_586
+Not file Delete sucessfully: inputs/input.txt_125
 READ
-File Read sucessfully: inputs/script.py_65
-READ
-File Read sucessfully: inputs/video.mp4_405
-ADD
-File Add sucessfully: inputs/input2.txt
+File Read sucessfully: inputs/video.mp4_31
 ADD
 DISK FULL BITMAP

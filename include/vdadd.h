@@ -6,6 +6,7 @@
 #include"bitio.h"
 #include"diskfunc.h"
 #include<string.h>
+#include<math.h>
 
 int add_file(char *fname,char *outname,char *bitmap);
 
