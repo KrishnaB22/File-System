@@ -6,7 +6,9 @@ unsigned int free_disk_space = 0;
 void add_file_helper(char *fname,char *outname,char *bitmap)
 {
     int i;
+    printf("ADD\n");
     i = add_file(fname,outname,bitmap);
+    
     if( i == 1)
     {
         printf("File Add sucessfully: %s\n",outname);
@@ -20,21 +22,25 @@ void add_file_helper(char *fname,char *outname,char *bitmap)
 void read_file_helper(char *fname,char *outname)
 {
     int i;
+    printf("READ\n");
     i = read_file(fname,outname);
+    
     if( i == 1)
     {
-        printf("File Read sucessfully: %s\n",outname);
+        printf("File Read sucessfully: %s\n",fname);
     }
     else
     {
-        printf("Not file Read sucessfully: %s\n",outname);
+        printf("Not file Read sucessfully: %s\n",fname);
     }
 }
 
 void delete_file_helper(char *fname,char *bitmap)
 {
     int i;
+    printf("DELETE\n");
     i = delete_file(fname,bitmap);
+    
     if( i == 1)
     {
         printf("File Delete sucessfully: %s\n",fname);

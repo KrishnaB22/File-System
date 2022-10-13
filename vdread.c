@@ -6,7 +6,7 @@ int read_file(char *fname,char *outname)
     i = get_file_node(fname); 
     if(i == 0)
     {
-        printf("file not found\n");
+        printf("file not found %s\n",fname);
         return 0;
     }
     // display_meta(file_meta);
