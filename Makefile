@@ -9,10 +9,10 @@ new = diskop
 files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c diskfunc.c vdadd.c vdread.c vddelete.c
 
 all:
-	$(CC) $(files) -o $(TARGET) $(CFLAGS)
+	@$(CC) $(files) -o $(TARGET) $(CFLAGS)
 
 new: create all
-	echo "done\n"
+	@echo "done\n"
 
 
 create:
@@ -20,7 +20,7 @@ create:
 	./vdcreate mydisk 134217728 1024 16384
 
 clean:
-	rm -rf mydisk $(TARGET) out.txt vdcreate out.mp4 results.txt mycommands.txt
+	rm -rf mydisk $(TARGET) out.txt vdcreate out.mp4
 
 commit:
 	git add . && \

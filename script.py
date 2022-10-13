@@ -8,7 +8,7 @@ ops = ['add','read','delete']
 f = open("commands.txt",'w')
 addedlist = []
 
-for i in range(100):
+for i in range(1000):
 
     action = random.choice(ops)
     outname = random.choice(myfiles)
@@ -17,8 +17,11 @@ for i in range(100):
     fname = 'inputs/' + fname
 
     if action == 'read':
-        outname = 'outputs/' + outname
         fname = random.choice(addedlist)
+        temp = fname.split('/')
+        temp[0] = 'outputs'
+        temp[1] = (temp[1].split('_'))[0]
+        outname = temp[0] + '/' + temp[1]
     else:
         outname = 'inputs/' + outname
 
