@@ -23,7 +23,7 @@ char *disk_init()
 
     no_of_blks = disk_meta . disk_size / disk_meta . blk_size;
     total_blocks_req_bits = (no_of_blks / 8)/disk_meta . blk_size;
-    printf("total blocks required for bits= %d\n",total_blocks_req_bits);
+    // printf("total blocks required for bits= %d\n",total_blocks_req_bits);
 
     total_arr_size = total_blocks_req_bits * disk_meta . blk_size;
     unsigned char *bitmap;
