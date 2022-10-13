@@ -5,7 +5,7 @@ myfiles = os.listdir('inputs/')
 
 ops = ['add','read','delete']
 
-f = open("mycommands.txt",'w')
+f = open("commands.txt",'w')
 
 
 for i in range(100):
@@ -15,7 +15,12 @@ for i in range(100):
     fname = outname + '_' + str(i)
 
     fname = 'inputs/' + fname
-    outname = 'inputs/' + outname
+
+    if action == 'read':
+        outname = 'outputs/' + outname
+    else:
+        outname = 'inputs/' + outname
+
 
     f.write("{}\n{}\n{}\n".format(action,fname,outname))
 

@@ -11,6 +11,9 @@ files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c diskfunc.c vda
 all:
 	$(CC) $(files) -o $(TARGET) $(CFLAGS)
 
+new: create all
+	echo "done\n"
+
 
 create:
 	gcc vdcreate.c -o vdcreate && \
