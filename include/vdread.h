@@ -7,7 +7,7 @@
 #include"diskfunc.h"
 #include<string.h>
 
-void read_file(char *fname,char *outname);
+int read_file(char *fname,char *outname);
 
 int read_bytes(char *fname,char *outname, int startnum,int tnum,char *out);
 

@@ -1,21 +1,21 @@
 #include"vdread.h"
 
-void read_file(char *fname,char *outname)
+int read_file(char *fname,char *outname)
 {
     int i,j,k;
     i = get_file_node(fname); 
     if(i == 0)
     {
         printf("file not found\n");
-        return;
+        return 0;
     }
-    display_meta(file_meta);
+    // display_meta(file_meta);
     int file_fd;
     file_fd = open(outname,O_CREAT |O_WRONLY|O_TRUNC,0666);
     if(file_fd == -1)
     {
         printf("Unable to create file to write\n");
-        return;
+        return 0;
     }
     k = file_meta.ptr_to_blk;
 
@@ -61,7 +61,7 @@ void read_file(char *fname,char *outname)
         }
 
     }
-
+    return 1;
     close(file_fd);
 }
 
