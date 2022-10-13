@@ -31,6 +31,34 @@ void read_file_helper(char *fname,char *outname)
     }
 }
 
+void delete_file_helper(char *fname,char *bitmap)
+{
+    int i;
+    i = delete_file(fname,bitmap);
+    if( i == 1)
+    {
+        printf("File Delete sucessfully: %s\n",fname);
+    }
+    else
+    {
+        printf("Not file Delete sucessfully: %s\n",fname);
+    }
+}
+
+void insert_at_end_helper(char *fname,char *outname,char *bitmap)
+{
+    int i;
+    i = insert_at_end(fname,outname,bitmap);
+    if( i == 1)
+    {
+        printf("File INS_END sucessfully: %s\n",outname);
+    }
+    else
+    {
+        printf("Not file INS_END sucessfully: %s\n",outname);
+    }
+}
+
 
 
 void user_actions(char *ufname,char *bitmap)
@@ -61,27 +89,25 @@ void user_actions(char *ufname,char *bitmap)
 
         if(strcmp(action,"add")== 0)
         {
-            // printf("adding file\n");
             add_file_helper(fname,outname,bitmap);
             continue;
         }
 
         if(strcmp(action,"read")== 0)
         {
-            // printf("reading file\n");
             read_file_helper(fname,outname);
             continue;
         }
 
         if(strcmp(action,"delete")== 0)
         {
-            delete_file(fname,bitmap);
+            delete_file_helper(fname,bitmap);
             continue;
         }
 
         if(strcmp(action,"insend")== 0)
         {
-            insert_at_end(fname,outname,bitmap);
+            insert_at_end_helper(fname,outname,bitmap);
             continue;
         }
 
