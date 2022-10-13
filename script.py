@@ -6,9 +6,14 @@ myfiles = os.listdir('inputs/')
 ops = ['add','read','delete']
 
 f = open("commands.txt",'w')
+
+cadd = 0
+cread = 0
+cdelete = 0
+
 addedlist = []
 
-for i in range(1000):
+for i in range(100000):
 
     action = random.choice(ops)
     outname = random.choice(myfiles)
@@ -22,11 +27,16 @@ for i in range(1000):
         temp[0] = 'outputs'
         temp[1] = (temp[1].split('_'))[0]
         outname = temp[0] + '/' + temp[1]
+        cread += 1
     else:
         outname = 'inputs/' + outname
 
     if action == 'add':
+        cadd += 1
         addedlist.append(fname)
+    
+    if action == 'delete':
+        cdelete += 1
 
 
     f.write("{}\n{}\n{}\n".format(action,fname,outname))
@@ -34,3 +44,4 @@ for i in range(1000):
 f.write('end')
 f.close()
 
+print("total operations add = {}, read = {}, delete = {}".format(cadd,cread,cdelete))

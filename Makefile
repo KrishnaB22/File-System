@@ -20,7 +20,7 @@ create:
 	./vdcreate mydisk 134217728 1024 16384
 
 clean:
-	rm -rf mydisk $(TARGET) out.txt vdcreate out.mp4
+	rm -rf mydisk $(TARGET) out.txt vdcreate out.mp4 commands.txt
 
 commit:
 	git add . && \

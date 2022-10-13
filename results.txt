@@ -32,7 +32,7 @@ ADD
 File Add sucessfully: inputs/video.mp4
 READ
 File Read sucessfully: inputs/Capture.PNG_2
-READ
+READ 
 File Read sucessfully: inputs/Capture.PNG_2
 READ
 File Read sucessfully: inputs/input.txt_0
