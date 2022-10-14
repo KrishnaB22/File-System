@@ -9,7 +9,7 @@ new = diskop
 files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c diskfunc.c vdadd.c vdread.c vddelete.c
 
 all:
-	@$(CC) $(files) -o $(TARGET) $(CFLAGS)
+	$(CC) $(files) -o $(TARGET) $(CFLAGS)
 
 new: create all
 	@echo "done\n"
