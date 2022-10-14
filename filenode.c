@@ -4,7 +4,7 @@ int get_empty_node(char *fname)
 {
     int i,j,k;
     int free_meta_found = 0;
-    int first_block_meta = total_blocks_req_bits + 2;
+    int first_block_meta = total_blocks_req_bits + 1;
     int last_block_meta = first_block_meta + (disk_meta.total_files / (disk_meta .blk_size / sizeof(file_info)));
     int file_meta_per_block = disk_meta .blk_size / sizeof(file_info);
     
@@ -36,7 +36,7 @@ int get_file_node(char *fname)
 {
     int i,j,k;
     int free_meta_found = 0;
-    int first_block_meta = total_blocks_req_bits + 2;
+    int first_block_meta = total_blocks_req_bits + 1;
     int last_block_meta = first_block_meta + (disk_meta.total_files / (disk_meta .blk_size / sizeof(file_info)));
     int file_meta_per_block = disk_meta .blk_size / sizeof(file_info);
     
