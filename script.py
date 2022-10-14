@@ -13,7 +13,7 @@ cdelete = 0
 
 addedlist = []
 
-for i in range(10000):
+for i in range(100):
 
     action = random.choice(ops)
     outname = random.choice(myfiles)
