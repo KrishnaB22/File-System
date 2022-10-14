@@ -50,10 +50,10 @@ int get_free_disk_size(char *bitmap)
 {
     int i,j,k;
     int count=0;
-    if(free_disk_space > 0)
-    {
-        return free_disk_space;
-    }
+    // if(free_disk_space > 0)
+    // {
+    //     return free_disk_space;
+    // }
     for(i=0;i<total_arr_size;i++)
     {
         if(bitmap[i] == 0)

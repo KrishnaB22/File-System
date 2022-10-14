@@ -2,7 +2,7 @@ CC = gcc
 FS_DIR = $(shell pwd)
 INCLUDE_DIR = $(FS_DIR)/include
 
-CFLAGS = -I$(INCLUDE_DIR)
+CFLAGS = -I$(INCLUDE_DIR) -lm
 
 TARGET = diskop
 new = diskop
