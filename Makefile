@@ -20,9 +20,12 @@ create:
 	./vdcreate mydisk 134217728 1024 16384
 
 clean:
-	rm -rf mydisk $(TARGET) out.txt vdcreate out.mp4 commands.txt
+	rm -rf mydisk $(TARGET) out.txt vdcreate out.mp4 commands.txt results.txt
 
 commit:
 	git add . && \
 	git commit -m "update" && \
 	git push --set-upstream origin main
+
+run:
+	time ./diskop commands.txt > results.txt 
