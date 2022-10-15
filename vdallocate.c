@@ -126,7 +126,7 @@ int main(int argc,char **argv)
     int i,j,k;
     char *bitmap;
     bitmap = disk_init();
-    //displaybitmap(bitmap);
+    ;
 
     char *fname,*outname;
     fname = (char *)malloc(200*sizeof(char));
@@ -137,7 +137,9 @@ int main(int argc,char **argv)
 
     user_actions(fname,bitmap);
 
-
+    // i = get_free_disk_size(bitmap);
+    // printf("freesize = %d\n",i);
+    // displaybitmap(bitmap);
 
 
     // i = add_file(fname,fname,bitmap);
