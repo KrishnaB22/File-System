@@ -4,7 +4,7 @@ import random
 myfiles = os.listdir('inputs/')
 
 ops = ['add','read','delete']
-ops = ['add','delete']
+#ops = ['add','delete']
 
 f = open("commands.txt",'w')
 
@@ -14,7 +14,7 @@ cdelete = 0
 
 addedlist = []
 
-for i in range(1000):
+for i in range(10000):
 
     action = random.choice(ops)
     outname = random.choice(myfiles)
