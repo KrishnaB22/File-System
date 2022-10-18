@@ -65,6 +65,22 @@ void insert_at_end_helper(char *fname,char *outname,char *bitmap)
     }
 }
 
+void read_bytes_helper(char *fname,char *outname, int start,int total)
+{
+    int i,j;
+    char *out;
+    out = (char *)malloc(total * sizeof(char));
+    i = read_bytes(fname,outname,start,total,out);
+    if(i == 1)
+    {
+        printf("File READ_BYTES sucessfully %s\n",fname);
+    }
+    else
+    {
+        printf("Not File READ_BYTES sucessfully %s\n",fname);
+    }
+}
+
 
 
 void user_actions(char *ufname,char *bitmap)
@@ -126,7 +142,6 @@ int main(int argc,char **argv)
     int i,j,k;
     char *bitmap;
     bitmap = disk_init();
-    ;
 
     char *fname,*outname;
     fname = (char *)malloc(200*sizeof(char));
@@ -137,9 +152,9 @@ int main(int argc,char **argv)
 
     user_actions(fname,bitmap);
 
-    // i = get_free_disk_size(bitmap);
-    // printf("freesize = %d\n",i);
-    // displaybitmap(bitmap);
+
+
+    
 
 
     // i = add_file(fname,fname,bitmap);
@@ -154,8 +169,15 @@ int main(int argc,char **argv)
 
     // //insert_at_end(fname,fname,bitmap);
     // read_file(fname,outname);
-    
 
+    // int s = 3,t= 9;
+
+    // char *out;
+    // out = (char *)malloc( t * sizeof(char));
+    // memset(out,0,t);
+    // read_bytes(fname,outname,s,t,out);
+    // printf("bytes = %s\n",out);
+    //
 
     // printf("free size on disk = %d\n",get_free_disk_size(bitmap));
 

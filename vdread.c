@@ -75,7 +75,7 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum,char *out)
         printf("file not found\n");
         return 0;
     }
-    display_meta(file_meta);
+    // display_meta(file_meta);
     int file_fd;
     file_fd = open(outname,O_CREAT |O_WRONLY|O_TRUNC,0666);
     if(file_fd == -1)
@@ -122,8 +122,8 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum,char *out)
                 if(start >= fblock && start <= end_blkno)
                 {
                     read_block(buf,blk_nos[i]);
-                    j = j + disk_meta . blk_size;
                     memcpy((temp + j),buf,disk_meta .blk_size);
+                    j = j + disk_meta . blk_size;
                 }
                 if(count < disk_meta.blk_size)
                 {
