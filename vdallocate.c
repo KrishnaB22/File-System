@@ -183,7 +183,7 @@ int main(int argc,char **argv)
 
     // displaybitmap(bitmap);
     // dis_file_meta();
-    // display_diskmeta();//
+    // display_diskmeta();
 
     write_bitmap_disk(bitmap);
 
