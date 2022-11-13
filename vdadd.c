@@ -330,3 +330,62 @@ int insert_at_end(char *fname,char *fname1,char *bitmap)
     close(file_fd);
     return 1;
 }
+
+
+int add_file2(char *fname,char *outname,char *bitmap)
+{
+    int file_fd,i,j,k;
+    file_fd = open(outname,O_RDONLY);
+    if(file_fd == -1)
+    {
+        printf("Unable to open file %s\n",outname);
+        return 0;
+    }
+
+    int file_size = lseek(file_fd,0,SEEK_END);
+    lseek(file_fd,0,SEEK_SET);
+    if(file_size <= 0)
+    {
+        printf("Unable to seek file ");
+        return 0;
+    }
+
+    i = get_empty_node(fname);
+    if(i == 0)
+    {
+        printf("Disk file limit reached\n");
+        return 0;
+    }
+    if(i==2)
+    {
+        return 0;
+    }
+    int total_space = ceil((ceil( (double)file_size / (double)disk_meta . blk_size)) / (((double)disk_meta .blk_size / (double)sizeof(int)) -1)) * disk_meta .blk_size;
+    total_space = total_space + file_size ;
+    int free_space = get_free_disk_size(bitmap);
+    if(free_space == 0)
+    {
+        printf("Disk full\n");
+        return 0;
+    }
+
+    if(free_space < total_space)
+    {
+        printf("Not enough space on disk\n");
+        return 0;
+    }
+
+    //writing file meta to disk
+
+    file_meta.is_free = 0x01;
+    strcpy(file_meta.file_name,fname);
+    file_meta.file_size = file_size;
+    file_meta.ptr_to_blk = find_empty_block(bitmap);
+    clear_bit(bitmap,file_meta.ptr_to_blk);
+
+    read_block(buf,bno);
+    memcpy((buf+(mno*sizeof(file_info))), &file_meta, sizeof(file_info));
+    write_block(buf,bno);
+    memset(buf,0,disk_meta.blk_size);
+
+}

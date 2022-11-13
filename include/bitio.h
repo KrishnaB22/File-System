@@ -11,4 +11,6 @@ void write_bitmap_disk(char *bitmap);
 
 int find_empty_block(char *bitmap);
 
+unsigned int *get_empty_blocks(char *bitmap,int num);
+
 #endif

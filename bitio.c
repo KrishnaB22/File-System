@@ -49,6 +49,17 @@ void write_bitmap_disk(char *bitmap)
     }
 }
 
+unsigned int *get_empty_blocks(char *bitmap,int num)
+{
+    unsigned int *emp_nos;
+    emp_nos = (int *)malloc(num * sizeof(int));
+    for(int i=0;i<num;i++)
+    {
+        emp_nos[i] = find_empty_block(bitmap);
+    }
+    return emp_nos;
+}
+
 int find_empty_block(char *bitmap)
 {
     int i,j=0,k=0,num=0;
