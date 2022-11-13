@@ -360,7 +360,8 @@ int add_file2(char *fname,char *outname,char *bitmap)
     {
         return 0;
     }
-    int total_space = ceil((ceil( (double)file_size / (double)disk_meta . blk_size)) / (((double)disk_meta .blk_size / (double)sizeof(int)) -1)) * disk_meta .blk_size;
+    int total_blocks = ceil((ceil( (double)file_size / (double)disk_meta . blk_size)) / (((double)disk_meta .blk_size / (double)sizeof(int)) -1))
+    int total_space = total_blocks * disk_meta .blk_size;
     total_space = total_space + file_size ;
     int free_space = get_free_disk_size(bitmap);
     if(free_space == 0)
