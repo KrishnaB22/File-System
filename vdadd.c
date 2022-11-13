@@ -377,7 +377,8 @@ int add_file2(char *fname,char *outname,char *bitmap)
     }
 
     //writing file meta to disk
-
+    unsigned int *emp_nos;
+    int n = 0;
     file_meta.is_free = 0x01;
     strcpy(file_meta.file_name,fname);
     file_meta.file_size = file_size;
