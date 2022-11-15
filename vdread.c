@@ -158,3 +158,74 @@ int read_bytes(char *fname,char *outname, int startnum,int tnum,char *out)
     return 1;
 
 }
+
+int read_file2(char *fname,char *outname)
+{
+    int i,j,k;
+    i = get_file_node(fname); 
+    if(i == 0)
+    {
+        printf("file not found %s\n",fname);
+        return 0;
+    }
+    // display_meta(file_meta);
+    int file_fd;
+    file_fd = open(outname,O_CREAT |O_WRONLY|O_TRUNC,0666);
+    if(file_fd == -1)
+    {
+        printf("Unable to create file to write\n");
+        return 0;
+    }
+    // k = file_meta.ptr_to_blk;
+
+    unsigned int * level_data;
+    level_data = (int *)malloc(10 * sizeof(int));
+    int levels = get_levels(level_data, file_size);
+
+    file_read_helper(file_fd,bitmap,levels,file_meta.ptr_to_blk, level_data);
+    
+    return 1;
+    close(file_fd);
+}
+
+
+void file_read_helper(int file_fd,char *bitmap,int levels,int prev_block,int *level_data)
+{
+    int i,j,n;
+    int k = level_data[levels];
+    int temp = disk_meta.blk_size/ sizeof(int);
+    unsigned int *empty_nos;
+
+    while(level_data[levels])
+    {
+        if(level_data[levels] > temp)
+            n = temp;
+        else
+            n = level_data[levels];
+        
+        memset(buf, 0, disk_meta.blk_size);
+        i =0;
+        while(i < n)
+        {
+            memset(buf, 0, disk_meta.blk_size);
+            if(levels > 0)
+            {   
+                file_read_helper(file_fd,bitmap,(levels -1),empty_nos[i],level_data);
+            }
+            else
+            {
+                if(size < disk_meta.blk_size)
+                {
+                    read_block(buf, empty_nos[i]);
+                    write(file_fd, buf, size);
+                }
+                // printf("here\n");
+                memset(buf, 0, disk_meta.blk_size);
+                read_block(buf, empty_nos[i]);
+                write(file_fd, buf, disk_meta.blk_size);
+            }
+            i++;
+        }
+        level_data[levels] -= n;
+    }
+}
