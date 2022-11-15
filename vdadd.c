@@ -360,7 +360,7 @@ int add_file2(char *fname,char *outname,char *bitmap)
     {
         return 0;
     }
-    int total_blocks = ceil((ceil( (double)file_size / (double)disk_meta . blk_size)) / (((double)disk_meta .blk_size / (double)sizeof(int)) -1))
+    int total_blocks = ceil((ceil( (double)file_size / (double)disk_meta . blk_size)) / (((double)disk_meta .blk_size / (double)sizeof(int)) -1));
     int total_space = total_blocks * disk_meta .blk_size;
     total_space = total_space + file_size ;
     int free_space = get_free_disk_size(bitmap);
@@ -377,8 +377,7 @@ int add_file2(char *fname,char *outname,char *bitmap)
     }
 
     //writing file meta to disk
-    unsigned int *emp_nos;
-    int n = 0;
+
     file_meta.is_free = 0x01;
     strcpy(file_meta.file_name,fname);
     file_meta.file_size = file_size;
@@ -389,5 +388,34 @@ int add_file2(char *fname,char *outname,char *bitmap)
     memcpy((buf+(mno*sizeof(file_info))), &file_meta, sizeof(file_info));
     write_block(buf,bno);
     memset(buf,0,disk_meta.blk_size);
+    unsigned int * level_data;
+    level_data = (int *)malloc(10 * sizeof(int));
+    int levels = get_levels(level_data, file_size);
+
+    file_add_helper(bitmap,levels,file_meta.ptr_to_blk, level_data);
+
+}
+
+
+int get_levels(int *level_data , unsigned int file_size)
+{
+    int i,j,temp;
+    temp = disk_meta.blk_size / sizeof(int) ;
+    file_size = ceil((double)file_size / (double)disk_meta.blk_size);
+    i = 0;
+    j = 0;
+    while(file_size != 1)
+    {
+        level_data[j] = file_size;
+        file_size = ceil((double)file_size / (double) temp);
+        i++;
+        j++;
+    }
+    return i;
+}
+
+void file_add_helper(char *bitmap,int level,int prev_block,int *level_data)
+{
+    int i,j;
 
 }
