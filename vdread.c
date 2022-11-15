@@ -176,25 +176,26 @@ int read_file2(char *fname,char *outname)
         printf("Unable to create file to write\n");
         return 0;
     }
-    // k = file_meta.ptr_to_blk;
+    k = file_meta.file_size;
 
     unsigned int * level_data;
     level_data = (int *)malloc(10 * sizeof(int));
-    int levels = get_levels(level_data, file_size);
+    int levels = get_levels(level_data, file_meta.file_size);
 
-    file_read_helper(file_fd,bitmap,levels,file_meta.ptr_to_blk, level_data);
+    file_read_helper(file_fd,levels,file_meta.ptr_to_blk, level_data,&k);
     
     return 1;
     close(file_fd);
 }
 
 
-void file_read_helper(int file_fd,char *bitmap,int levels,int prev_block,int *level_data)
+void file_read_helper(int file_fd,int levels,int prev_block,int *level_data,int *size)
 {
     int i,j,n;
     int k = level_data[levels];
     int temp = disk_meta.blk_size/ sizeof(int);
     unsigned int *empty_nos;
+    empty_nos = (int *) malloc((disk_meta.blk_size/sizeof(int)) * sizeof(int));
 
     while(level_data[levels])
     {
@@ -204,25 +205,29 @@ void file_read_helper(int file_fd,char *bitmap,int levels,int prev_block,int *le
             n = level_data[levels];
         
         memset(buf, 0, disk_meta.blk_size);
+        read_block(buf,prev_block);
+        memcpy(empty_nos,buf,disk_meta.blk_size);
         i =0;
         while(i < n)
         {
             memset(buf, 0, disk_meta.blk_size);
             if(levels > 0)
             {   
-                file_read_helper(file_fd,bitmap,(levels -1),empty_nos[i],level_data);
+                file_read_helper(file_fd,(levels -1),empty_nos[i],level_data,size);
             }
             else
             {
-                if(size < disk_meta.blk_size)
+                if(*size < disk_meta.blk_size)
                 {
                     read_block(buf, empty_nos[i]);
-                    write(file_fd, buf, size);
+                    write(file_fd, buf, *size);
+                    break;
                 }
                 // printf("here\n");
                 memset(buf, 0, disk_meta.blk_size);
                 read_block(buf, empty_nos[i]);
                 write(file_fd, buf, disk_meta.blk_size);
+                *size -= disk_meta.blk_size;
             }
             i++;
         }

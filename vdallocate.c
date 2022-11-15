@@ -23,7 +23,7 @@ void read_file_helper(char *fname,char *outname)
 {
     int i;
     printf("READ\n");
-    i = read_file(fname,outname);
+    i = read_file2(fname,outname);
     
     if( i == 1)
     {
