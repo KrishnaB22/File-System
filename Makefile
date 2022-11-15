@@ -16,7 +16,7 @@ new: create all
 
 
 create:
-	gcc vdcreate.c -o vdcreate && \
+	@gcc vdcreate.c -o vdcreate && \
 	./vdcreate mydisk 134217728 1024 16384
 
 clean:

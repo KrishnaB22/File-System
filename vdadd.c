@@ -391,32 +391,19 @@ int add_file2(char *fname,char *outname,char *bitmap)
     unsigned int * level_data;
     level_data = (int *)malloc(10 * sizeof(int));
     int levels = get_levels(level_data, file_size);
+    // printf("levels = %d\n",levels);
+    // for(i =0;i<levels;i++)
+    // printf("level_data[%d] = %d\n",i,level_data[i]);
 
-    file_add_helper(bitmap,levels,file_meta.ptr_to_blk, level_data);
+    file_add_helper(file_fd,bitmap,levels,file_meta.ptr_to_blk, level_data);
+    return 1;
 
 }
 
 
-int get_levels(int *level_data , unsigned int file_size)
+void file_add_helper(int file_fd,char *bitmap,int levels,int prev_block,int *level_data)
 {
-    int i,j,temp;
-    temp = disk_meta.blk_size / sizeof(int) ;
-    file_size = ceil((double)file_size / (double)disk_meta.blk_size);
-    i = 0;
-    j = 0;
-    while(file_size != 1)
-    {
-        level_data[j] = file_size;
-        file_size = ceil((double)file_size / (double) temp);
-        i++;
-        j++;
-    }
-    return i;
-}
-
-void file_add_helper(char *bitmap,int levels,int prev_block,int *level_data)
-{
-    int i,j;
+    int i,j,n;
     int k = level_data[levels];
     int temp = disk_meta.blk_size/ sizeof(int);
     unsigned int *empty_nos;
@@ -434,19 +421,20 @@ void file_add_helper(char *bitmap,int levels,int prev_block,int *level_data)
         
         memset(buf, 0, disk_meta.blk_size);
         memcpy(buf, empty_nos, disk_meta.blk_size);
-        write_block(prev_block,buf);
+        write_block(buf,prev_block);
         i =0;
         while(i < n)
         {
             memset(buf, 0, disk_meta.blk_size);
-            if(level > 0)
+            if(levels > 0)
             {   
-                file_add_helper(bitmap,(levels -1),empty_nos[i],level_data);
+                file_add_helper(file_fd,bitmap,(levels -1),empty_nos[i],level_data);
             }
             else
             {
-                read(fd, buf, disk_meta.blk_size);
-                write_block(empty_nos[i], buf);
+                // printf("here\n");
+                read(file_fd, buf, disk_meta.blk_size);
+                write_block(buf, empty_nos[i]);
             }
             i++;
         }

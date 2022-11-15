@@ -7,7 +7,7 @@ void add_file_helper(char *fname,char *outname,char *bitmap)
 {
     int i;
     printf("ADD\n");
-    i = add_file(fname,outname,bitmap);
+    i = add_file2(fname,outname,bitmap);
     
     if( i == 1)
     {

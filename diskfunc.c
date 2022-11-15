@@ -72,3 +72,25 @@ int get_free_disk_size(char *bitmap)
     free_disk_space = count*disk_meta.blk_size;
     return free_disk_space;
 }
+
+int get_levels(int *level_data , unsigned int file_size)
+{
+    int i,j,temp;
+    temp = disk_meta.blk_size / sizeof(int) ;
+    file_size = ceil((double)file_size / (double)disk_meta.blk_size);
+
+    i = 0;
+    j = 0;
+    while(file_size != 1) 
+    {
+        level_data[j] = file_size;
+        file_size = ceil((double)file_size / (double) temp);
+        i++;
+        j++;
+    }
+    if(i == 0)
+    {
+        level_data[i] = 1;
+    }
+    return i;
+}
