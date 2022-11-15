@@ -391,11 +391,9 @@ int add_file2(char *fname,char *outname,char *bitmap)
     unsigned int * level_data;
     level_data = (int *)malloc(10 * sizeof(int));
     int levels = get_levels(level_data, file_size);
-    // printf("levels = %d\n",levels);
-    // for(i =0;i<levels;i++)
-    // printf("level_data[%d] = %d\n",i,level_data[i]);
 
     file_add_helper(file_fd,bitmap,levels,file_meta.ptr_to_blk, level_data);
+    close(file_fd);
     return 1;
 
 }
@@ -432,7 +430,6 @@ void file_add_helper(int file_fd,char *bitmap,int levels,int prev_block,int *lev
             }
             else
             {
-                // printf("here\n");
                 read(file_fd, buf, disk_meta.blk_size);
                 write_block(buf, empty_nos[i]);
             }

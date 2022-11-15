@@ -223,7 +223,6 @@ void file_read_helper(int file_fd,int levels,int prev_block,int *level_data,int 
                     write(file_fd, buf, *size);
                     break;
                 }
-                // printf("here\n");
                 memset(buf, 0, disk_meta.blk_size);
                 read_block(buf, empty_nos[i]);
                 write(file_fd, buf, disk_meta.blk_size);
