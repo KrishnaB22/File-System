@@ -414,8 +414,42 @@ int get_levels(int *level_data , unsigned int file_size)
     return i;
 }
 
-void file_add_helper(char *bitmap,int level,int prev_block,int *level_data)
+void file_add_helper(char *bitmap,int levels,int prev_block,int *level_data)
 {
     int i,j;
+    int k = level_data[levels];
+    int temp = disk_meta.blk_size/ sizeof(int);
+    unsigned int *empty_nos;
 
+    while(level_data[levels])
+    {
+        if(level_data[levels] > temp)
+            n = temp;
+        else
+            n = level_data[levels];
+
+        empty_nos = get_empty_blocks(bitmap,n);
+        for(j =0;j<n; j++)
+            clear_bit(bitmap,empty_nos[j]);
+        
+        memset(buf, 0, disk_meta.blk_size);
+        memcpy(buf, empty_nos, disk_meta.blk_size);
+        write_block(prev_block,buf);
+        i =0;
+        while(i < n)
+        {
+            memset(buf, 0, disk_meta.blk_size);
+            if(level > 0)
+            {   
+                file_add_helper(bitmap,(levels -1),empty_nos[i],level_data);
+            }
+            else
+            {
+                read(fd, buf, disk_meta.blk_size);
+                write_block(empty_nos[i], buf);
+            }
+            i++;
+        }
+        level_data[levels] -= n;
+    }
 }
