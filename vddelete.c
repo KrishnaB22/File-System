@@ -159,6 +159,7 @@ int delete_file2(char *fname,char *bitmap)
     int levels = get_levels(level_data, file_meta.file_size);
 
     file_delete_helper(bitmap,levels,file_meta.ptr_to_blk, level_data,&k);
+    set_bit(bitmap,file_meta.ptr_to_blk);
     
     return 1;
 }
