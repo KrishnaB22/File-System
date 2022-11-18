@@ -147,8 +147,7 @@ int delete_file2(char *fname,char *bitmap)
         printf("file not found\n");
         return 0;
     }
-    k = file_meta.ptr_to_blk;
-    int count = file_meta.file_size;
+    k = file_meta.file_size;
     
     file_meta.is_free = 0x00;
     read_block(buf,bno);
