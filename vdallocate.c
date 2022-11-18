@@ -149,10 +149,10 @@ int main(int argc,char **argv)
 
     fname = argv[1];
     outname = "out.txt";
-    displaybitmap(bitmap);
+    //displaybitmap(bitmap);
     user_actions(fname,bitmap);
-    printf("----------------------\n");
-    displaybitmap(bitmap);
+    // printf("----------------------\n");
+    // displaybitmap(bitmap);
 
 
 
