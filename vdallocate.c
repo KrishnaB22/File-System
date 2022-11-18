@@ -39,7 +39,7 @@ void delete_file_helper(char *fname,char *bitmap)
 {
     int i;
     printf("DELETE\n");
-    i = delete_file(fname,bitmap);
+    i = delete_file2(fname,bitmap);
     
     if( i == 1)
     {
