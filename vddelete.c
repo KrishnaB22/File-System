@@ -136,3 +136,73 @@ int delete_file(char *fname,char *bitmap)
     }
 
 }*/
+
+int delete_file2(char *fname,char *bitmap)
+{
+    int i,j,k;
+
+    i = get_file_node(fname); 
+    if(i == 0)
+    {
+        printf("file not found\n");
+        return 0;
+    }
+    k = file_meta.ptr_to_blk;
+    int count = file_meta.file_size;
+    
+    file_meta.is_free = 0x00;
+    read_block(buf,bno);
+    memcpy((buf+(mno*sizeof(file_info))), &file_meta, sizeof(file_info));
+    write_block(buf,bno);
+
+    unsigned int * level_data;
+    level_data = (int *)malloc(10 * sizeof(int));
+    int levels = get_levels(level_data, file_meta.file_size);
+
+    file_delete_helper(bitmap,levels,file_meta.ptr_to_blk, level_data,&k);
+    
+    return 1;
+}
+
+
+void file_delete_helper(char *bitmap, int levels,int prev_block,int *level_data,int *size)
+{
+    int i,j,n;
+    int k = level_data[levels];
+    int temp = disk_meta.blk_size/ sizeof(int);
+    unsigned int *empty_nos;
+    empty_nos = (int *) malloc((disk_meta.blk_size/sizeof(int)) * sizeof(int));
+
+    while(level_data[levels])
+    {
+        if(level_data[levels] > temp)
+            n = temp;
+        else
+            n = level_data[levels];
+        
+        memset(buf, 0, disk_meta.blk_size);
+        read_block(buf,prev_block);
+        memcpy(empty_nos,buf,disk_meta.blk_size);
+        i =0;
+        while(i < n)
+        {
+            memset(buf, 0, disk_meta.blk_size);
+            if(levels > 0)
+            {   
+                file_delete_helper(bitmap,(levels -1),empty_nos[i],level_data,size);
+            }
+            else
+            {
+                if(*size < disk_meta.blk_size)
+                {
+                    set_bit(bitmap,empty_nos[i]);
+                    break;
+                }
+                set_bit(bitmap,empty_nos[i]);
+                *size -= disk_meta.blk_size;
+            }
+            i++;
+        }
+        level_data[levels] -= n;
+    }
+}
