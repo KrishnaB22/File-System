@@ -29,20 +29,20 @@ char *disk_init()
     unsigned char *bitmap;
     bitmap = (unsigned char *)malloc(total_arr_size * sizeof(unsigned char));
 
-    i = 0;
-    j = 1;
-    while(j <= total_blocks_req_bits)
-    {   
-        read_block(buf,j);
-        k = 0;
-        while(k < disk_meta . blk_size)
-        {
-            bitmap[i] = buf[k];
-            i++;
-            k++;
-        }
-        j++;
-    }
+    // i = 0;
+    // j = 1;
+    // while(j <= total_blocks_req_bits)
+    // {   
+    //     read_block(buf,j);
+    //     k = 0;
+    //     while(k < disk_meta . blk_size)
+    //     {
+    //         bitmap[i] = buf[k];
+    //         i++;
+    //         k++;
+    //     }
+    //     j++;
+    // }
     Heap *bitheap = build_heap();
     return bitmap;
 }

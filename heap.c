@@ -31,8 +31,6 @@ void heapify(Heap *bitheap, int size, int i)
 void add_node(Heap *bitheap,int start, int size)
 {
     int i,j;
-    // Heap *node;
-    // node =(Heap *) malloc(sizeof(Heap));
     Heap node;
     node . start = start;
     node . size = size;
@@ -87,11 +85,14 @@ Heap *build_heap()
             for(i=0;i<8;i++)
             {
                 n = (bit<<i) & (0x80);
-                if(n == 0x80)
+                if(n == 128)
                 {
                     num = i + 1;
                     if(start == 0)
+                    {
                         start = (j*k*8)+num;
+                        printf("start = %d\n",start);
+                    }
                     size++;
                 }
                 else
@@ -109,6 +110,7 @@ Heap *build_heap()
                     }
                 }
             }
+            k++;
         }
         j++;
     }
