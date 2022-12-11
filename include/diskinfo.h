@@ -27,5 +27,5 @@ int total_blocks_req_bits;
 
 int bno,mno;
 
-int heap_total_size = 16;
+int heap_total_size;
 int heap_size;

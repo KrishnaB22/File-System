@@ -57,6 +57,7 @@ Heap *build_heap()
 {
     int i,j,k,size,n,num,start;
     Heap *bitheap;
+    heap_total_size = 16;
     bitheap = (Heap *) malloc(heap_total_size * sizeof(Heap));
     heap_size = 0;
 
