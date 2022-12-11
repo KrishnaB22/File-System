@@ -43,6 +43,7 @@ char *disk_init()
         }
         j++;
     }
+    Heap *bitheap = build_heap();
     return bitmap;
 }
 

@@ -2,6 +2,7 @@
 #define DISKFUNC_H
 
 #include"diskdriver.h"
+#include"heap.h"
 #include<string.h>
 #include<math.h>
 

@@ -26,3 +26,6 @@ int total_arr_size,no_of_blks;
 int total_blocks_req_bits;
 
 int bno,mno;
+
+int heap_total_size = 16;
+int heap_size;

@@ -14,6 +14,7 @@
 #include"vdadd.h"
 #include"vdread.h"
 #include"vddelete.h"
+#include"heap.h"
 
 void user_actions(char *ufname,char *bitmap);
 

@@ -6,7 +6,7 @@ CFLAGS = -I$(INCLUDE_DIR) -lm
 
 TARGET = diskop
 new = diskop
-files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c diskfunc.c vdadd.c vdread.c vddelete.c
+files := vdallocate.c diskdriver.c filenode.c bitio.c disk_util.c diskfunc.c vdadd.c vdread.c vddelete.c heap.c
 
 all:
 	$(CC) $(files) -o $(TARGET) $(CFLAGS)
