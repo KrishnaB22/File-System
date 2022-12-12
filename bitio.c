@@ -96,3 +96,54 @@ int find_empty_block(char *bitmap)
     num = (j*8)+num;
     return num;
 }
+
+
+int find_empty_block2(Heap *bitheap)
+{
+
+}
+
+unsigned int *get_empty_blocks2(Heap *bitheap,int num)
+{
+    int i,j,size,start,temp;
+    unsigned int *emp_nos;
+    emp_nos = (int *)malloc(num * sizeof(int));
+    i = 0;
+    j = 0;
+    while(num > 0)
+    {
+        if(heap_size == 0)
+        {
+            bitheap = build_heap();
+            i = 0;
+        }
+        start = bitheap[i] . start;
+        size = bitheap[i] . size;
+        if(size < num)
+        {
+            delete_node(bitheap);
+            heap_size--;
+        }
+        else
+        {
+            delete_node(bitheap);
+            add_node(bitheap, (start + num),(size - num));
+        }
+        temp = 0
+        while(temp < size)
+        {
+            if(j == num)
+            {
+                num = 0;
+                break;
+            }
+            emp_nos[j] = start;
+            start++;
+            temp++;
+            j++;
+        }
+        num -= size;
+        i++;
+    }
+    return emp_nos;
+}

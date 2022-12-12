@@ -1,10 +1,10 @@
 #include"heap.h"
 
-void swap(Heap a, Heap b)
+void swap(Heap *a, Heap *b)
 {
-    Heap temp = b;
-    b = a;
-    a = temp;
+    Heap *temp = b;
+    *b = *a;
+    *a = *temp;
 }
 
 
@@ -23,7 +23,7 @@ void heapify(Heap *bitheap, int size, int i)
         largest = r;
     if (largest != i)
     {
-        swap(bitheap[i], bitheap[largest]);
+        swap(&bitheap[i], &bitheap[largest]);
         heapify(bitheap, size, largest);
     }
 }
@@ -41,12 +41,23 @@ void add_node(Heap *bitheap,int start, int size)
     }
     else
     {
-        bitheap[(heap_total_size - 1)] = node;
+        bitheap[heap_size] = node;
         heap_size += 1;
-        for (int i = heap_total_size / 2 - 1; i >= 0; i--)
+        for (int i = heap_size / 2 - 1; i >= 0; i--)
         {
-            heapify(bitheap, heap_total_size, i);
+            heapify(bitheap, heap_size, i);
         }
+    }
+}
+
+void delete_node(Heap *bitheap)
+{
+    int i = 0;
+    swap(&bitheap[i], &bitheap[heap_size - 1]);
+    heap_size -= 1;
+    for (int i = heap_size / 2 - 1; i >= 0; i--)
+    {
+        heapify(bitheap, heap_size, i);
     }
 }
 
@@ -64,21 +75,17 @@ Heap *build_heap()
     start = 0;
     n = 0;
     j = 1;
+    printf("%d\n",disk_meta . blk_size);
     while(j <= total_blocks_req_bits)
     {   
         read_block(buf,j);
         k = 0;
         while(k < disk_meta . blk_size)
         {
-            bitmap[i] = buf[k];
-            i++;
-            k++;
-        }
-        k = 0;
-        while(k < disk_meta . blk_size)
-        {
-            if(bitmap[k] == 0)
+            bitmap[k] = buf[k];
+            if(bitmap[k] == 0x00)
             {
+                k++;
                 continue;
             }
             bit = bitmap[k];
@@ -91,7 +98,6 @@ Heap *build_heap()
                     if(start == 0)
                     {
                         start = (j*k*8)+num;
-                        printf("start = %d\n",start);
                     }
                     size++;
                 }
@@ -100,6 +106,7 @@ Heap *build_heap()
                     if(start != 0)
                     {
                         add_node(bitheap,start,size);
+                        // printf("start = %d -- size = %d --here\n",start,size);
                         start = 0;
                         size = 0;
                         n++;
@@ -114,5 +121,18 @@ Heap *build_heap()
         }
         j++;
     }
+    add_node(bitheap,start,size);
+    // printf("start = %d -- size = %d\n",start,size);
     return bitheap;
+}
+
+
+void display_heap(Heap *bitheap)
+{
+    int i;
+    for (i = 0; i < heap_size; i++)
+    {
+        printf("start = %d -- size = %d\n", bitheap[i] . start, bitheap[i] . size);
+        printf("\n");
+    }
 }

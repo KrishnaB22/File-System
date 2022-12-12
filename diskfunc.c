@@ -2,7 +2,7 @@
 
 extern unsigned int free_disk_space;
 
-char *disk_init()
+Heap *disk_init()
 {
     int i,j,k,e;
 
@@ -29,22 +29,23 @@ char *disk_init()
     unsigned char *bitmap;
     bitmap = (unsigned char *)malloc(total_arr_size * sizeof(unsigned char));
 
-    // i = 0;
-    // j = 1;
-    // while(j <= total_blocks_req_bits)
-    // {   
-    //     read_block(buf,j);
-    //     k = 0;
-    //     while(k < disk_meta . blk_size)
-    //     {
-    //         bitmap[i] = buf[k];
-    //         i++;
-    //         k++;
-    //     }
-    //     j++;
-    // }
+    i = 0;
+    j = 1;
+    while(j <= total_blocks_req_bits)
+    {   
+        read_block(buf,j);
+        k = 0;
+        while(k < disk_meta . blk_size)
+        {
+            bitmap[i] = buf[k];
+            i++;
+            k++;
+        }
+        j++;
+    }
+    printf("here\n");
     Heap *bitheap = build_heap();
-    return bitmap;
+    return bitheap;
 }
 
 int get_free_disk_size(char *bitmap)

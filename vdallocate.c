@@ -140,7 +140,8 @@ void user_actions(char *ufname,char *bitmap)
 int main(int argc,char **argv)
 {
     int i,j,k;
-    char *bitmap;
+    //char *bitmap;
+    Heap *bitmap;
     bitmap = disk_init();
 
     char *fname,*outname;

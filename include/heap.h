@@ -12,5 +12,8 @@ typedef struct Heap
 }Heap;
 
 Heap *build_heap();
+void delete_node(Heap *bitheap);
+void add_node(Heap *bitheap,int start, int size);
+void display_heap(Heap *bitheap);
 
 #endif
