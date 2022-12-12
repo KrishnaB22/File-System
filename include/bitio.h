@@ -14,4 +14,6 @@ int find_empty_block(char *bitmap);
 
 unsigned int *get_empty_blocks(Heap *bitheap,int num);
 
+int find_empty_block2(Heap *bitheap);
+
 #endif

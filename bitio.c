@@ -100,7 +100,9 @@ int find_empty_block(char *bitmap)
 
 int find_empty_block2(Heap *bitheap)
 {
-
+    unsigned int *num;
+    num = get_empty_blocks(bitheap,1);
+    return num[0];
 }
 
 unsigned int *get_empty_blocks(Heap *bitheap,int num)

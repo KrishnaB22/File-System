@@ -159,12 +159,11 @@ int delete_file2(char *fname,Heap *bitmap)
     file_delete_helper(bitmap,levels,file_meta.ptr_to_blk, level_data,&k);
     set_bit(bitmap,file_meta.ptr_to_blk);
     free_disk_space -= file_meta.file_size;
-    
     return 1;
 }
 
 
-void file_delete_helper(char *bitmap, int levels,int prev_block,int *level_data,int *size)
+void file_delete_helper(Heap *bitmap, int levels,int prev_block,int *level_data,int *size)
 {
     int i,j,n;
     int k = level_data[levels];

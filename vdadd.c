@@ -379,7 +379,7 @@ int add_file2(char *fname,char *outname,Heap *bitmap)
     file_meta.is_free = 0x01;
     strcpy(file_meta.file_name,fname);
     file_meta.file_size = file_size;
-    file_meta.ptr_to_blk = find_empty_block(bitmap);
+    file_meta.ptr_to_blk = find_empty_block2(bitmap);
     clear_bit(bitmap,file_meta.ptr_to_blk);
 
     read_block(buf,bno);
