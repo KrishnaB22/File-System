@@ -157,7 +157,7 @@ int delete_file2(char *fname,Heap *bitmap)
     int levels = get_levels(level_data, file_meta.file_size);
 
     file_delete_helper(bitmap,levels,file_meta.ptr_to_blk, level_data,&k);
-    set_bit(bitmap,file_meta.ptr_to_blk);
+    set_bit2(file_meta.ptr_to_blk);
     free_disk_space -= file_meta.file_size;
     return 1;
 }
@@ -193,10 +193,10 @@ void file_delete_helper(Heap *bitmap, int levels,int prev_block,int *level_data,
             {
                 if(*size < disk_meta.blk_size)
                 {
-                    set_bit(bitmap,empty_nos[i]);
+                    set_bit2(empty_nos[i]);
                     break;
                 }
-                set_bit(bitmap,empty_nos[i]);
+                set_bit2(empty_nos[i]);
                 *size -= disk_meta.blk_size;
             }
             i++;

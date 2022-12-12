@@ -380,7 +380,7 @@ int add_file2(char *fname,char *outname,Heap *bitmap)
     strcpy(file_meta.file_name,fname);
     file_meta.file_size = file_size;
     file_meta.ptr_to_blk = find_empty_block2(bitmap);
-    clear_bit(bitmap,file_meta.ptr_to_blk);
+    clear_bit2(file_meta.ptr_to_blk);
 
     read_block(buf,bno);
     memcpy((buf+(mno*sizeof(file_info))), &file_meta, sizeof(file_info));
@@ -414,7 +414,7 @@ void file_add_helper(int file_fd,Heap *bitmap,int levels,int prev_block,int *lev
 
         empty_nos = get_empty_blocks(bitmap,n);
         for(j =0;j<n; j++)
-            clear_bit(bitmap,empty_nos[j]);
+            clear_bit2(empty_nos[j]);
         
         memset(buf, 0, disk_meta.blk_size);
         memcpy(buf, empty_nos, disk_meta.blk_size);

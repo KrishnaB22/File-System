@@ -15,6 +15,19 @@ void clear_bit(char *buf,int num)
     buf[i] = buf[i] & ~(1<<(8-j));
 }
 
+void clear_bit2(int val)
+{
+    int i,j;
+    int bno,num,ch;
+    bno = ceil((double)val/(double)(disk_meta .blk_size * 8) );
+    read_block(buf,bno);
+    num = val % (disk_meta .blk_size * 8);
+    ch = num / 8;
+    num = ch % 8;
+    buf[num] = buf[num] & ~(1<<(num -1));
+    write_block(buf,bno);
+}
+
 void set_bit(char *buf,int num)
 {
     int i,j;
@@ -28,6 +41,19 @@ void set_bit(char *buf,int num)
         return;
     }
     buf[i] = buf[i] | (1<<(8-j));
+}
+
+void set_bit2(int val)
+{
+    int i,j;
+    int bno,num,ch;
+    bno = ceil((double)val/(double)(disk_meta .blk_size * 8) );
+    read_block(buf,bno);
+    num = val % (disk_meta .blk_size * 8);
+    ch = num / 8;
+    num = ch % 8;
+    buf[num] = buf[num] | ~(1<<(num -1));
+    write_block(buf,bno);
 }
 
 void write_bitmap_disk(char *bitmap)
