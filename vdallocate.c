@@ -1,9 +1,6 @@
 #include"vdallocate.h"
 
-unsigned int free_disk_space = 0;
-
-
-void add_file_helper(char *fname,char *outname,char *bitmap)
+void add_file_helper(char *fname,char *outname,Heap *bitmap)
 {
     int i;
     printf("ADD\n");
@@ -35,7 +32,7 @@ void read_file_helper(char *fname,char *outname)
     }
 }
 
-void delete_file_helper(char *fname,char *bitmap)
+void delete_file_helper(char *fname,Heap *bitmap)
 {
     int i;
     printf("DELETE\n");
@@ -51,10 +48,10 @@ void delete_file_helper(char *fname,char *bitmap)
     }
 }
 
-void insert_at_end_helper(char *fname,char *outname,char *bitmap)
+void insert_at_end_helper(char *fname,char *outname,Heap *bitmap)
 {
     int i;
-    i = insert_at_end(fname,outname,bitmap);
+    //i = insert_at_end(fname,outname,bitmap);
     if( i == 1)
     {
         printf("File INS_END sucessfully: %s\n",outname);
@@ -83,7 +80,7 @@ void read_bytes_helper(char *fname,char *outname, int start,int total)
 
 
 
-void user_actions(char *ufname,char *bitmap)
+void user_actions(char *ufname,Heap *bitmap)
 {
     int i,j;
     FILE *fp = fopen(ufname,"r");
@@ -188,7 +185,7 @@ int main(int argc,char **argv)
     // dis_file_meta();
     // display_diskmeta();
 
-    write_bitmap_disk(bitmap);
+    //write_bitmap_disk(bitmap);
 
     close(disk_fd);
 }

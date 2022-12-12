@@ -49,7 +49,7 @@ void write_bitmap_disk(char *bitmap)
     }
 }
 
-unsigned int *get_empty_blocks(char *bitmap,int num)
+unsigned int *get_empty_blocks2(char *bitmap,int num)
 {
     unsigned int *emp_nos;
     emp_nos = (int *)malloc(num * sizeof(int));
@@ -103,7 +103,7 @@ int find_empty_block2(Heap *bitheap)
 
 }
 
-unsigned int *get_empty_blocks2(Heap *bitheap,int num)
+unsigned int *get_empty_blocks(Heap *bitheap,int num)
 {
     int i,j,size,start,temp;
     unsigned int *emp_nos;
@@ -115,21 +115,19 @@ unsigned int *get_empty_blocks2(Heap *bitheap,int num)
         if(heap_size == 0)
         {
             bitheap = build_heap();
-            i = 0;
         }
         start = bitheap[i] . start;
         size = bitheap[i] . size;
+        delete_node(bitheap);
         if(size < num)
         {
-            delete_node(bitheap);
             heap_size--;
         }
         else
         {
-            delete_node(bitheap);
             add_node(bitheap, (start + num),(size - num));
         }
-        temp = 0
+        temp = 0;
         while(temp < size)
         {
             if(j == num)
@@ -143,7 +141,6 @@ unsigned int *get_empty_blocks2(Heap *bitheap,int num)
             j++;
         }
         num -= size;
-        i++;
     }
     return emp_nos;
 }

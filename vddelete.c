@@ -1,7 +1,5 @@
 #include"vddelete.h"
 
-extern int free_disk_space;
-
 int delete_file(char *fname,char *bitmap)
 {
     int i,j,k;
@@ -137,7 +135,7 @@ int delete_file(char *fname,char *bitmap)
 
 }*/
 
-int delete_file2(char *fname,char *bitmap)
+int delete_file2(char *fname,Heap *bitmap)
 {
     int i,j,k;
 
@@ -160,6 +158,7 @@ int delete_file2(char *fname,char *bitmap)
 
     file_delete_helper(bitmap,levels,file_meta.ptr_to_blk, level_data,&k);
     set_bit(bitmap,file_meta.ptr_to_blk);
+    free_disk_space -= file_meta.file_size;
     
     return 1;
 }

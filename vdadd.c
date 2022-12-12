@@ -1,7 +1,5 @@
 #include"vdadd.h"
 
-extern int free_disk_space;
-
 int add_file(char *fname,char *outname,char *bitmap)
 {
     int file_fd,i,j,k;
@@ -332,7 +330,7 @@ int insert_at_end(char *fname,char *fname1,char *bitmap)
 }
 
 
-int add_file2(char *fname,char *outname,char *bitmap)
+int add_file2(char *fname,char *outname,Heap *bitmap)
 {
     int file_fd,i,j,k;
     file_fd = open(outname,O_RDONLY);
@@ -363,7 +361,7 @@ int add_file2(char *fname,char *outname,char *bitmap)
     int total_blocks = ceil((ceil( (double)file_size / (double)disk_meta . blk_size)) / (((double)disk_meta .blk_size / (double)sizeof(int)) -1));
     int total_space = total_blocks * disk_meta .blk_size;
     total_space = total_space + file_size ;
-    int free_space = get_free_disk_size(bitmap);
+    int free_space = get_free_disk_size2();
     if(free_space == 0)
     {
         printf("Disk full\n");
@@ -393,13 +391,14 @@ int add_file2(char *fname,char *outname,char *bitmap)
     int levels = get_levels(level_data, file_size);
 
     file_add_helper(file_fd,bitmap,levels,file_meta.ptr_to_blk, level_data);
+    free_disk_space -= file_size;
     close(file_fd);
     return 1;
 
 }
 
 
-void file_add_helper(int file_fd,char *bitmap,int levels,int prev_block,int *level_data)
+void file_add_helper(int file_fd,Heap *bitmap,int levels,int prev_block,int *level_data)
 {
     int i,j,n;
     int k = level_data[levels];

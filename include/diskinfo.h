@@ -29,3 +29,5 @@ int bno,mno;
 
 int heap_total_size;
 int heap_size;
+
+unsigned int free_disk_space;

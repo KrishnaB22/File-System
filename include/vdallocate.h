@@ -16,7 +16,7 @@
 #include"vddelete.h"
 #include"heap.h"
 
-void user_actions(char *ufname,char *bitmap);
+void user_actions(char *ufname,Heap *bitmap);
 
 
 #endif

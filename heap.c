@@ -69,7 +69,7 @@ Heap *build_heap()
     heap_total_size = 16;
     bitheap = (Heap *) malloc(heap_total_size * sizeof(Heap));
     heap_size = 0;
-
+    free_disk_space = 0;
     char bitmap[disk_meta.blk_size], bit;
     size = 0;
     start = 0;
@@ -106,6 +106,7 @@ Heap *build_heap()
                     if(start != 0)
                     {
                         add_node(bitheap,start,size);
+                        free_disk_space += size;
                         // printf("start = %d -- size = %d --here\n",start,size);
                         start = 0;
                         size = 0;
@@ -122,7 +123,9 @@ Heap *build_heap()
         j++;
     }
     add_node(bitheap,start,size);
+    free_disk_space += size;
     // printf("start = %d -- size = %d\n",start,size);
+    free_disk_space *= 8;
     return bitheap;
 }
 
@@ -132,7 +135,7 @@ void display_heap(Heap *bitheap)
     int i;
     for (i = 0; i < heap_size; i++)
     {
-        printf("start = %d -- size = %d\n", bitheap[i] . start, bitheap[i] . size);
+        printf("start = %ld -- size = %ld\n", bitheap[i] . start, bitheap[i] . size);
         printf("\n");
     }
 }

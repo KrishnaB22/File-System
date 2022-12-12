@@ -1,7 +1,5 @@
 #include"diskfunc.h"
 
-extern unsigned int free_disk_space;
-
 Heap *disk_init()
 {
     int i,j,k,e;
@@ -72,6 +70,11 @@ int get_free_disk_size(char *bitmap)
         }
     }
     free_disk_space = count*disk_meta.blk_size;
+    return free_disk_space;
+}
+
+int get_free_disk_size2()
+{
     return free_disk_space;
 }
 
