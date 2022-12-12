@@ -148,9 +148,12 @@ int main(int argc,char **argv)
     fname = argv[1];
     outname = "out.txt";
     //displaybitmap(bitmap);
+    display_heap(bitmap);
     user_actions(fname,bitmap);
     // printf("----------------------\n");
     // displaybitmap(bitmap);
+    bitmap = build_heap();
+    display_heap(bitmap);
 
 
 

@@ -24,7 +24,7 @@ void clear_bit2(int val)
     num = val % (disk_meta .blk_size * 8);
     ch = num / 8;
     num = ch % 8;
-    buf[num] = buf[num] & ~(1<<(num -1));
+    buf[ch] = buf[ch] & ~(1<<(num -1));
     write_block(buf,bno);
 }
 
@@ -52,7 +52,7 @@ void set_bit2(int val)
     num = val % (disk_meta .blk_size * 8);
     ch = num / 8;
     num = ch % 8;
-    buf[num] = buf[num] | ~(1<<(num -1));
+    buf[ch] = buf[ch] | ~(1<<(num -1));
     write_block(buf,bno);
 }
 
