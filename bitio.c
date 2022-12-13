@@ -55,9 +55,9 @@ void set_bit2(int val)
     ch = num / 8;
     num = ch % 8;
     
-    printf("before bno = %d -- bit = %d\n",bno,buf[ch]);
+    //printf("before bno = %d -- bit = %d\n",bno,buf[ch]);
     buf[ch] = buf[ch] | (1<<(num - 1));
-    printf("after bno = %d -- bit = %d\n",bno,buf[ch]);
+    //printf("after bno = %d -- bit = %d\n",bno,buf[ch]);
     write_block(buf,bno);
 }
 
