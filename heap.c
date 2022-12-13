@@ -133,6 +133,7 @@ Heap *build_heap()
 void display_heap(Heap *bitheap)
 {
     int i;
+    printf("Heap size = %d\n",heap_size);
     for (i = 0; i < heap_size; i++)
     {
         printf("start = %ld -- size = %ld\n", bitheap[i] . start, bitheap[i] . size);

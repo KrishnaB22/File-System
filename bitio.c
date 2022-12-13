@@ -47,12 +47,17 @@ void set_bit2(int val)
 {
     int i,j;
     int bno,num,ch;
-    bno = ceil((double)val/(double)(disk_meta .blk_size * 8) );
+    
+    bno = ceil((double)val/(double)(disk_meta .blk_size * 8) ); 
     read_block(buf,bno);
+    
     num = val % (disk_meta .blk_size * 8);
     ch = num / 8;
     num = ch % 8;
-    buf[ch] = buf[ch] | ~(1<<(num -1));
+    
+    printf("before bno = %d -- bit = %d\n",bno,buf[ch]);
+    buf[ch] = buf[ch] | (1<<(num - 1));
+    printf("after bno = %d -- bit = %d\n",bno,buf[ch]);
     write_block(buf,bno);
 }
 

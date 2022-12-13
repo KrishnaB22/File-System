@@ -137,9 +137,10 @@ void user_actions(char *ufname,Heap *bitmap)
 int main(int argc,char **argv)
 {
     int i,j,k;
-    //char *bitmap;
+    char *bitmap1;
     Heap *bitmap;
     bitmap = disk_init();
+    bitmap1 = disk_init2();
 
     char *fname,*outname;
     fname = (char *)malloc(200*sizeof(char));
@@ -147,11 +148,17 @@ int main(int argc,char **argv)
 
     fname = argv[1];
     outname = "out.txt";
-    //displaybitmap(bitmap);
+    
+    //displaybitmap(bitmap1);
     display_heap(bitmap);
+    
     user_actions(fname,bitmap);
-    // printf("----------------------\n");
-    // displaybitmap(bitmap);
+    
+    
+    printf("----------------------\n");
+    bitmap1 = disk_init2();
+    //displaybitmap(bitmap1);
+    
     bitmap = build_heap();
     display_heap(bitmap);
 
