@@ -342,6 +342,7 @@ int add_file2(char *fname,char *outname,Heap *bitmap)
 
     int file_size = lseek(file_fd,0,SEEK_END);
     lseek(file_fd,0,SEEK_SET);
+    // printf("File size = %d\n",file_size);
     if(file_size <= 0)
     {
         printf("Unable to seek file ");
@@ -389,8 +390,8 @@ int add_file2(char *fname,char *outname,Heap *bitmap)
     unsigned int * level_data;
     level_data = (int *)malloc(10 * sizeof(int));
     int levels = get_levels(level_data, file_size);
-
-    file_add_helper(file_fd,bitmap,levels,file_meta.ptr_to_blk, level_data);
+    // printf("levels = %d\n",levels);
+    file_add_helper(file_fd,bitmap,levels-1,file_meta.ptr_to_blk, level_data);
     free_disk_space -= file_size;
     close(file_fd);
     return 1;
@@ -404,7 +405,7 @@ void file_add_helper(int file_fd,Heap *bitmap,int levels,int prev_block,int *lev
     int k = level_data[levels];
     int temp = disk_meta.blk_size/ sizeof(int);
     unsigned int *empty_nos;
-
+    // printf("level data = %d\n",level_data[levels]);
     while(level_data[levels])
     {
         if(level_data[levels] > temp)

@@ -181,8 +181,9 @@ int read_file2(char *fname,char *outname)
     unsigned int * level_data;
     level_data = (int *)malloc(10 * sizeof(int));
     int levels = get_levels(level_data, file_meta.file_size);
-
-    file_read_helper(file_fd,levels,file_meta.ptr_to_blk, level_data,&k);
+    // printf("levels = %d\n",levels);
+    // printf("read file szie = %d\n",file_meta.file_size);
+    file_read_helper(file_fd,levels - 1,file_meta.ptr_to_blk, level_data,&k);
     
     return 1;
     close(file_fd);
@@ -196,7 +197,7 @@ void file_read_helper(int file_fd,int levels,int prev_block,int *level_data,int 
     int temp = disk_meta.blk_size/ sizeof(int);
     unsigned int *empty_nos;
     empty_nos = (int *) malloc((disk_meta.blk_size/sizeof(int)) * sizeof(int));
-
+    // printf("level _data = %d\n",level_data[levels]);
     while(level_data[levels])
     {
         if(level_data[levels] > temp)

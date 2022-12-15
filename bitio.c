@@ -23,8 +23,16 @@ void clear_bit2(int val)
     read_block(buf,bno);
     num = val % (disk_meta .blk_size * 8);
     ch = num / 8;
-    num = ch % 8;
-    buf[ch] = buf[ch] & ~(1<<(num -1));
+    num = num % 8;
+    // printf("Clear \n");
+    // printf("Block no = %d\n",val);
+    // printf("before bno = %d -- bit = %d\n",bno,buf[ch]);
+    
+    // buf[ch] = buf[ch] & ~(1<<(num -1));
+
+    buf[ch] = buf[ch] & ~(1<<(8 -num));
+
+    // printf("after bno = %d -- bit = %d\n",bno,buf[ch]);
     write_block(buf,bno);
 }
 
@@ -53,11 +61,16 @@ void set_bit2(int val)
     
     num = val % (disk_meta .blk_size * 8);
     ch = num / 8;
-    num = ch % 8;
+    num = num % 8;
+    // printf("Set\n");
+    // printf("Block no = %d\n",val);
+    // printf("before bno = %d -- bit = %d\n",bno,buf[ch]);
     
-    //printf("before bno = %d -- bit = %d\n",bno,buf[ch]);
-    buf[ch] = buf[ch] | (1<<(num - 1));
-    //printf("after bno = %d -- bit = %d\n",bno,buf[ch]);
+    //buf[ch] = buf[ch] | (1<<(num - 1));
+
+    buf[ch] = buf[ch] | (1<<(8 - num));
+    
+    // printf("after bno = %d -- bit = %d\n",bno,buf[ch]);
     write_block(buf,bno);
 }
 

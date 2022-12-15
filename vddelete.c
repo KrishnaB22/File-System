@@ -156,7 +156,7 @@ int delete_file2(char *fname,Heap *bitmap)
     level_data = (int *)malloc(10 * sizeof(int));
     int levels = get_levels(level_data, file_meta.file_size);
 
-    file_delete_helper(bitmap,levels,file_meta.ptr_to_blk, level_data,&k);
+    file_delete_helper(bitmap,levels-1,file_meta.ptr_to_blk, level_data,&k);
     set_bit2(file_meta.ptr_to_blk);
     free_disk_space -= file_meta.file_size;
     return 1;
