@@ -64,7 +64,7 @@ void delete_node(Heap *bitheap)
 
 Heap *build_heap()
 {
-    int i,j,k,size,n,num,start;
+    int i,j,k,size,n,num,start,z;
     Heap *bitheap;
     heap_total_size = 16;
     bitheap = (Heap *) malloc(heap_total_size * sizeof(Heap));
@@ -73,9 +73,8 @@ Heap *build_heap()
     char bitmap[disk_meta.blk_size], bit;
     size = 0;
     start = 0;
-    n = 0;
+    z = 1;
     j = 1;
-    printf("%d\n",disk_meta . blk_size);
     while(j <= total_blocks_req_bits)
     {   
         read_block(buf,j);
@@ -110,9 +109,9 @@ Heap *build_heap()
                         // printf("start = %d -- size = %d --here\n",start,size);
                         start = 0;
                         size = 0;
-                        n++;
+                        z++;
                     }
-                    if(n == (heap_total_size - 1))
+                    if(z == heap_total_size )
                     {
                         return bitheap;
                     }

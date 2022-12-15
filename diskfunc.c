@@ -41,7 +41,6 @@ Heap *disk_init()
         }
         j++;
     }
-    printf("here\n");
     Heap *bitheap = build_heap();
     return bitheap;
 }
